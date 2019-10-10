@@ -1,26 +1,17 @@
 //
-//  CustomerBehavior.h
+//  CustomerBehavior.java
 //  OOAD Project 3
 //
 
 public class CustomerBehavior{
 
+	public int rentTools() {
+        return 0;
+    }
 
+    public int calcDays(){
+    	return 0;
+    }
 	
 }
 
-// #ifndef NoiseBehavior_hpp
-// #define NoiseBehavior_hpp
-
-// #include <stdio.h>
-// #include <iostream>
-// #include <string>
-
-// Strategy pattern applied here
-// class NoiseBehavior {
-// public:
-//     //pure virtual function
-//     virtual std::string makeNoise() = 0;
-// };
-
-// #endif /* NoiseBehavior_hpp */

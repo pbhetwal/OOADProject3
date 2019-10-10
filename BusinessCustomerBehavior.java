@@ -1,17 +1,17 @@
 //
-//  CasualCustomerBehavior.java
+//  BusinessCustomerBehavior.java
 //  OOAD Project 3
 //
-public class CasualCustomerBehavior implements CustomerBehavior{
+public class BusinessCustomerBehavior implements CustomerBehavior{
 	private double randToolNum, randNumDays;
 
 	public static rentTools() {
-		randToolNum = getRand(1,2);
+		randToolNum = 3;
 		return randToolNum;
 	}
 
 	public static calcDays(){
-		randNumDays = getRand(1,2);
+		randNumDays = 7;
 		return randNumDays;
 	}
 }
