@@ -1,4 +1,8 @@
 // Singleton pattern used here 
+
+import java.util.HashMap;
+import java.util.Map;
+
 class HardwareStore implements Observer, DisplayElement{
 	private static HardwareStore ins = new HardwareStore();
 	private Tools tools;
@@ -26,7 +30,7 @@ class HardwareStore implements Observer, DisplayElement{
 	public void addToolToHashMap(Tools tool){
 		hmap.put(tool, NULL);
 	}
-	
+
 	public void addCustomerToHashMap(Customer customer, Tools tool){
 		if(hmap.get(tool) != NULL){
 			System.out.println("Tool already rented by a customer");
