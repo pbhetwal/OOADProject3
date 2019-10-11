@@ -1,10 +1,10 @@
 class YardworkTool extends Tools {
-    public PaintingTool(){
+    public YardworkTool(){
         setPrice(7);
         setCategory("Yardwork");
         setRented(false);
     }
-    public PaintingTool(String name){
+    public YardworkTool(String name){
         setPrice(7);
         setCategory("Yardwork");
         setRented(false);

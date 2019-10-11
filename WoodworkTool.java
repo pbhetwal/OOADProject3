@@ -1,10 +1,10 @@
 class WoodworkTool extends Tools {
-    public PaintingTool(){
+    public WoodworkTool(){
         setPrice(7);
         setCategory("Woodwork");
         setRented(false);
     }
-    public PaintingTool(String name){
+    public WoodworkTool(String name){
         setPrice(7);
         setCategory("Woodwork");
         setRented(false);

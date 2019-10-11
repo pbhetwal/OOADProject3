@@ -1,10 +1,10 @@
-class Pubmbing extends Tools {
-    public PaintingTool(){
+class PlumbingTool extends Tools {
+    public PlumbingTool(){
         setPrice(7);
         setCategory("Plumbing");
         setRented(false);
     }
-    public PaintingTool(String name){
+    public PlumbingTool(String name){
         setPrice(7);
         setCategory("Plumbing");
         setRented(false);

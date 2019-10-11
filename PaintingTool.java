@@ -1,10 +1,10 @@
 class PaintingTool extends Tools {
-    public PaintingTool(){
+    public PaintingTool() {
         setPrice(7);
         setCategory("Painting");
         setRented(false);
     }
-    public PaintingTool(String name){
+    public PaintingTool(String name) {
         setPrice(7);
         setCategory("Painting");
         setRented(false);

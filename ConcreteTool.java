@@ -1,10 +1,10 @@
 class ConcreteTool extends Tools {
-    public PaintingTool(){
+    public ConcreteTool(){
         setPrice(7);
         setCategory("Concrete");
         setRented(false);
     }
-    public PaintingTool(String name){
+    public ConcreteTool(String name){
         setPrice(7);
         setCategory("Concrete");
         setRented(false);
