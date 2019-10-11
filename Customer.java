@@ -4,7 +4,7 @@
 //
 public class Customer implements Observer, DisplayElement{
 	private String name, className;
-	private Int daysLeft;
+	private int daysLeft;
 	private CustomerBehavior cb;
 
 	public Customer(){
@@ -16,11 +16,11 @@ public class Customer implements Observer, DisplayElement{
 	}
 
 	//to be overridden
-	public static rentTools() {
+	public static int rentTools() {
 		return 0;
 	}
 	//to be overridden
-	public static calcDays(){
+	public static int calcDays(){
 		return 0;
 	}
 
@@ -28,7 +28,7 @@ public class Customer implements Observer, DisplayElement{
 		this.name = name;
 	}
 
-	public static getName(){
+	public static String getName(){
 		return this.name;
 	}
 
@@ -36,19 +36,19 @@ public class Customer implements Observer, DisplayElement{
 		this.className = className;
 	}
 
-	public static getClassName(){
+	public static String getClassName(){
 		return this.className;
 	}
 
-	public void setDaysLeft(Int daysLeft){
+	public void setDaysLeft(int daysLeft){
 		this.daysLeft = daysLeft;
 	}
 
-	public static getDaysLeft(){
+	public static int getDaysLeft(){
 		return this.daysLeft;
 	}
 
-	public static getRand(double min, double max){
+	public static int getRand(double min, double max){
 		double num = (Math.random()*((max - min) + 1)) + min;
 		return num;
 	}
