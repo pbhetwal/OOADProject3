@@ -2,14 +2,13 @@
 //  Customer.java
 //  OOAD Project 3
 //
-public class Customer{
+public class Customer implements Observer, DisplayElement{
 	private String name, className;
 	private Int daysLeft;
-	private List<Tool> tools;
 	private CustomerBehavior cb;
 
-	public Zookeeper(){
-        tools = new LinkedList<Tool>();
+	public Customer(){
+
     }
 
 	public void setCustomerBehavior( CustomerBehavior cb){
@@ -49,13 +48,21 @@ public class Customer{
 		return this.daysLeft;
 	}
 
-	public void addTools(Tools t){
-		tools.add(t);
-	}
-
 	public static getRand(double min, double max){
 		double num = (Math.random()*((max - min) + 1)) + min;
 		return num;
+	}
+
+
+	public void update(){
+		daysLeft--;
+		if(daysLeft == 0){
+			returnTools();
+		}
+	}
+
+	public void announce(){
+		return;
 	}
 
 }
