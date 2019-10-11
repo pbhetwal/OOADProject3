@@ -57,7 +57,8 @@ public class Customer implements Observer, DisplayElement{
 	public void update(){
 		daysLeft--;
 		if(daysLeft == 0){
-			returnTools();
+			//returnTools();
+			return;
 		}
 	}
 
