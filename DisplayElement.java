@@ -1,3 +1,3 @@
-public interface DisplayElement() {
+public interface DisplayElement {
     public void announce();
 }
