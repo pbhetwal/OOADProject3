@@ -44,7 +44,7 @@ class HardwareStore implements Observer, DisplayElement{
 		}
 	}
 
-	public static int additonalOptions(){
+	public int additonalOptions(){
 		int price = 0;
 		double rand;
 		String chooseOption(){

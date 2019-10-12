@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5b36de0-dbbf-41d3-824f-7204bebcca9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HardwareStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/HardwareStore.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,11 +12,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HardwareStore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+            <state relative-caret-position="236">
+              <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+              <folding>
+                <element signature="e#584#585#0" expanded="true" />
+                <element signature="e#602#603#0" expanded="true" />
+                <element signature="e#838#839#0" expanded="true" />
+                <element signature="e#865#866#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,7 +97,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
@@ -140,11 +145,11 @@
         <option value="$PROJECT_DIR$/YardworkTool.java" />
         <option value="$PROJECT_DIR$/WoodworkTool.java" />
         <option value="$PROJECT_DIR$/ConcreteTool.java" />
-        <option value="$PROJECT_DIR$/HardwareStore.java" />
         <option value="$PROJECT_DIR$/ConcreteCalander.java" />
         <option value="$PROJECT_DIR$/Calander.java" />
         <option value="$PROJECT_DIR$/Main.java" />
         <option value="$PROJECT_DIR$/Customer.java" />
+        <option value="$PROJECT_DIR$/HardwareStore.java" />
       </list>
     </option>
   </component>
@@ -175,7 +180,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570908366294" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570908549206" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -375,13 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HardwareStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CasualCustomerBehavior.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -447,6 +445,19 @@
             <element signature="e#830#831#0" expanded="true" />
             <element signature="e#1077#1078#0" expanded="true" />
             <element signature="e#1090#1091#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HardwareStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+          <folding>
+            <element signature="e#584#585#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#865#866#0" expanded="true" />
           </folding>
         </state>
       </provider>
