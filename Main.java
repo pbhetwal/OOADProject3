@@ -61,6 +61,6 @@ public class Main {
         Customer Rachel = new RegularCustomer();
         Customer Rebecca = new RegularCustomer();
         Calander cal = new Calander();
-        cal.startDay();
+        System.out.println(cal.startDay());
     }
 }

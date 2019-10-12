@@ -45,7 +45,7 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 
 public String chooseOption(){
-
+		double rand;
 		rand = (Math.random()*((3 - 1) + 1)) + 1;
 		if (rand == 1){
 			return "cord";
@@ -60,8 +60,7 @@ public String chooseOption(){
 
 	public int additonalOptions(){
 		int price = 0;
-		double rand;
-		
+
 		double num = (Math.random()*((6 - 0) + 1)) + 0;
 		if(num == 0){
 			return 0;
