@@ -5,12 +5,16 @@
 public class BusinessCustomerBehavior implements CustomerBehavior{
 	private double randToolNum, randNumDays;
 
-	public static rentTools() {
+	public BusinessCustomerBehavior(){
+
+	}
+
+	public static int rentTools() {
 		randToolNum = 3;
 		return randToolNum;
 	}
 
-	public static calcDays(){
+	public static int calcDays(){
 		randNumDays = 7;
 		return randNumDays;
 	}

@@ -5,12 +5,16 @@
 public class CasualCustomerBehavior implements CustomerBehavior{
 	private double randToolNum, randNumDays;
 
-	public static rentTools() {
+	public CasualCustomerBehavior(){
+
+	}
+
+	public static int rentTools() {
 		randToolNum = getRand(1,2);
 		return randToolNum;
 	}
 
-	public static calcDays(){
+	public static int calcDays(){
 		randNumDays = getRand(1,2);
 		return randNumDays;
 	}
