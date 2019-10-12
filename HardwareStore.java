@@ -38,6 +38,14 @@ class HardwareStore implements Observer, DisplayElement{
 		System.out.println("Customer "+ custName + " is checking out and paying "+ custPrice);
 	}
 
+
+	public int getTotalPrice(){
+		return this.TotalPrice;
+	}
+
+	public void setTotalPrice(int tp){
+		TotalPrice = tp;
+	}
 	public void calcPrice(Tools t, Customer c){
 		int price = priceMap.get(c.getName());
 		price += t.getPrice();
