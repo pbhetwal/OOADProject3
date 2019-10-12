@@ -44,13 +44,21 @@ class HardwareStore implements Observer, DisplayElement{
 		}
 	}
 
+
+
 	public static int additonalOptions(){
 		int price = 0;
 		double rand;
-		String chooseOption(){
+		public String chooseOption(){
 			rand = (Math.random()*((3 - 1) + 1)) + 1;
 			if (rand == 1){
-				return ""
+				return "cord";
+			}
+			else if(rand == 2){
+				return "kit";
+			}
+			else{
+				return "gear";
 			}
 		}
 		double num = (Math.random()*((6 - 0) + 1)) + 0;
@@ -58,8 +66,22 @@ class HardwareStore implements Observer, DisplayElement{
 			return 0;
 		}
 		else{
-
+			while (num != 0){
+				String op;
+				op = chooseOption();
+				if(op == "cord"){
+					price += extensionCord;
+				}
+				else if(op == "kit"){
+					price += accessoryKit;
+				}
+				else{
+					price += protectiveGear;
+				}
+				num -= 1;
+			}
 		}
+		return price;
 	}
 
 	public void update(){
