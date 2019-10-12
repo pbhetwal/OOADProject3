@@ -44,21 +44,24 @@ class HardwareStore implements Observer, DisplayElement{
 		}
 	}
 
+public String chooseOption(){
+
+		rand = (Math.random()*((3 - 1) + 1)) + 1;
+		if (rand == 1){
+			return "cord";
+		}
+		else if(rand == 2){
+			return "kit";
+		}
+		else{
+			return "gear";
+		}
+	}
+
 	public int additonalOptions(){
 		int price = 0;
 		double rand;
-		public String chooseOption(){
-			rand = (Math.random()*((3 - 1) + 1)) + 1;
-			if (rand == 1){
-				return "cord";
-			}
-			else if(rand == 2){
-				return "kit";
-			}
-			else{
-				return "gear";
-			}
-		}
+		
 		double num = (Math.random()*((6 - 0) + 1)) + 0;
 		if(num == 0){
 			return 0;
