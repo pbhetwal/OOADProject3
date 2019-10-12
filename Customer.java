@@ -50,7 +50,7 @@ public class Customer implements Observer, DisplayElement{
 
 
 	public static int getRand(int min, int max){
-		int num = (Math.random()*((max - min) + 1)) + min;
+		int num = int((Math.random()*((max - min) + 1)) + min);
 		return num;
 	}
 
