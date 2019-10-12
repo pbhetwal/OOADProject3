@@ -30,6 +30,35 @@ class HardwareStore implements Observer, DisplayElement{
 		priceMap.put(c.getName(), 0);
 	}
 
+	public void allActiveRentals(){
+
+		Iterator it = hmap.entrySet().iterator();
+		System.out.println("Active Rentals are as follows: ");
+		while(it.hasNext()){
+			Map.Entry elem = (Map.Entry)it.next();
+
+			if(elem.getValue() != null){
+				String cName = (Customer)elem.getValue().getName();
+				String tName = (Tools)elem.getKey().getName();
+				System.out.println(cName + " is currently renting "+ tName);
+			}
+		}
+	}
+
+	public void allToolsLeft(){
+
+		Iterator it = hmap.entrySet().iterator();
+		System.out.println("Tools left in the store are as follows: ");
+		while(it.hasNext()){
+			Map.Entry elem = (Map.Entry)it.next();
+
+			if(elem.getValue() == null){
+				String tName = (Tools)elem.getKey().getName();
+				System.out.println(tName);
+			}
+		}
+	}
+
 	public void checkOut(Customer c){
 		int custPrice = additonalOptions();
 
