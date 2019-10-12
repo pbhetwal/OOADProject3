@@ -10,7 +10,7 @@ class HardwareStore implements Observer, DisplayElement{
 	private Subject Calender;
 	private int TotalPrice;
 	private HashMap<Tools, Customer> hmap = new HashMap<Tools, Customer>();
-	private HashMap<Customer, Integer> priceMap = new HashMap<Customer, Integer>();
+	private HashMap<String, Integer> priceMap = new HashMap<String, Integer>();
 	private int extensionCord = 5;
 	private int accessoryKit = 25;
 	private int protectiveGear = 30;
@@ -28,15 +28,15 @@ class HardwareStore implements Observer, DisplayElement{
 	public void checkOut(Customer c){
 		int custPrice = additonalOptions();
 
-		custPrice += priceMap.get(c);
+		custPrice += priceMap.get(c.getName());
 		String custName = c.getName();
 		System.out.println("Customer "+ custName + " is checking out and paying "+ custPrice);
 	}
 
 	public void calcPrice(Tools t, Customer c){
-		int price = priceMap.get(c);
+		int price = priceMap.get(c.getName());
 		price += t.getPrice();
-		priceMap.put(c, price);
+		priceMap.put(c.getName(), price);
 	}
 	public void returnTools(Customer customer, Tools tool){
 		if(hmap.get(tool) == customer){

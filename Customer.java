@@ -6,12 +6,16 @@ public class Customer implements Observer, DisplayElement{
 	private String name, className;
 	private int daysLeft;
 	private CustomerBehavior cb;
+	private HardwareStore store;
 
 	public Customer(){
-
+		
+	}
+	public Customer(HardwareStore s){
+		store = s;
     }
 
-	public void setCustomerBehavior( CustomerBehavior cb){
+	public void setCustomerBehavior(CustomerBehavior cb){
 		this.cb = cb;
 	}
 

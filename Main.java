@@ -62,5 +62,6 @@ public class Main {
         Customer Rebecca = new RegularCustomer();
         Calander cal = new Calander();
         System.out.println(cal.startDay());
+        store.addCustomerToHashMap(Carl, Brush);
     }
 }
