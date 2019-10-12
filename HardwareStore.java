@@ -116,5 +116,9 @@ public String chooseOption(){
 		return;
 	}
 
+	public HashMap getMap() {
+		return hmap;
+	}
+
 
 }

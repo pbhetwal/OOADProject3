@@ -2,6 +2,11 @@
 //  Customer.java
 //  OOAD Project 3
 //
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+
 public class Customer implements Observer, DisplayElement{
 	private String name, className;
 	private int daysLeft;
@@ -73,6 +78,14 @@ public class Customer implements Observer, DisplayElement{
 
 	public void announce(){
 		return;
+	}
+
+	public void rent(){
+		int numTools = cb.rentTools();
+		setDaysLeft(cb.calcDays());
+		HashMap temp = store.getMap();
+		Iterator it;
+
 	}
 
 }
