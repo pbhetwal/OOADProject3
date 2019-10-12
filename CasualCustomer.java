@@ -1,10 +1,11 @@
-
-
-
-
 public class CasualCustomer extends Customer{
 	public CasualCustomer(){
 
+	}
+
+	public CasualCustomer(String name){
+		super(name);
+		setCustomerBehavior(new CasualCustomerBehavior());
 	}
 
 

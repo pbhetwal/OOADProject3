@@ -1,10 +1,11 @@
-
-
-
-
 public class RegularCustomer extends Customer{
 	public RegularCustomer(){
 
+	}
+
+	public RegularCustomer(String name){
+		super(name);
+		setCustomerBehavior(new RegularCustomerBehavior());
 	}
 
 

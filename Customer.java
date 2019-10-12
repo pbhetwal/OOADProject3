@@ -9,8 +9,12 @@ public class Customer implements Observer, DisplayElement{
 	private HardwareStore store;
 
 	public Customer(){
-		
+
 	}
+	public Customer(String name){
+		this.name = name;
+	}
+
 	public Customer(HardwareStore s){
 		store = s;
     }
@@ -53,7 +57,7 @@ public class Customer implements Observer, DisplayElement{
 	}
 
 
-	public static int getRand(int min, int max){
+	public int getRand(int min, int max){
 		int num = (int)((Math.random()*((max - min) + 1)) + min);
 		return num;
 	}

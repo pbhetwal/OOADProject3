@@ -1,12 +1,11 @@
-
-
-
-
-
-
 public class BusinessCustomer extends Customer{
 	public BusinessCustomer(){
 
+	}
+
+	public BusinessCustomer(String name){
+		super(name);
+		setCustomerBehavior(new BusinessCustomerBehavior());
 	}
 
 

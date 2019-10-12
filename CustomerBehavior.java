@@ -3,7 +3,7 @@
 //  OOAD Project 3
 //
 
-public class CustomerBehavior{
+public interface CustomerBehavior{
 
 	public int rentTools() {
         return 0;
