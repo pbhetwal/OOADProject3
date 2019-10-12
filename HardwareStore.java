@@ -43,7 +43,7 @@ class HardwareStore implements Observer, DisplayElement{
 			hmap.put(tool, customer);
 		}
 	}
-	
+
 	public int additonalOptions(){
 		int price = 0;
 		double rand;

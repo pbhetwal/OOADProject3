@@ -8,11 +8,11 @@ public class CasualCustomer extends Customer{
 	}
 
 
-	public static int rentTools() {
+	public int rentTools() {
 		return 0;
 	}
 
-	public static int calcDays(){
+	public int calcDays(){
 		return 0;
 	}
 
