@@ -3,7 +3,7 @@
 //  OOAD Project 3
 //
 public class RegularCustomerBehavior implements CustomerBehavior{
-	private double randToolNum, randNumDays;
+	private int randToolNum, randNumDays;
 
 	public RegularCustomerBehavior(){
 

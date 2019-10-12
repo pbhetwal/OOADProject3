@@ -17,7 +17,4 @@ public class CasualCustomer extends Customer{
 		return 0;
 	}
 
-
-
-
 }

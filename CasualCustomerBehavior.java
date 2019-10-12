@@ -3,7 +3,7 @@
 //  OOAD Project 3
 //
 public class CasualCustomerBehavior implements CustomerBehavior{
-	private double randToolNum, randNumDays;
+	private int randToolNum, randNumDays;
 
 	public CasualCustomerBehavior(){
 
@@ -15,7 +15,7 @@ public class CasualCustomerBehavior implements CustomerBehavior{
 	}
 
 	public int rentTools() {
-		randToolNum = getRand(1,2);
+		randToolNum = (int)getRand(1,2);
 		return randToolNum;
 	}
 
