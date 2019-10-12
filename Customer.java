@@ -12,15 +12,15 @@ public class Customer implements Observer, DisplayElement{
     }
 
 	public void setCustomerBehavior( CustomerBehavior cb){
-		customerBehavior = cb;
+		this.cb = cb;
 	}
 
 	//to be overridden
-	public static int rentTools() {
+	public int rentTools() {
 		return 0;
 	}
 	//to be overridden
-	public static int calcDays(){
+	public int calcDays(){
 		return 0;
 	}
 
@@ -28,7 +28,7 @@ public class Customer implements Observer, DisplayElement{
 		this.name = name;
 	}
 
-	public static String getName(){
+	public String getName(){
 		return this.name;
 	}
 
@@ -36,7 +36,7 @@ public class Customer implements Observer, DisplayElement{
 		this.className = className;
 	}
 
-	public static String getClassName(){
+	public String getClassName(){
 		return this.className;
 	}
 
@@ -44,9 +44,10 @@ public class Customer implements Observer, DisplayElement{
 		this.daysLeft = daysLeft;
 	}
 
-	public static int getDaysLeft(){
+	public int getDaysLeft(){
 		return this.daysLeft;
 	}
+
 
 	public static int getRand(int min, int max){
 		int num = (Math.random()*((max - min) + 1)) + min;

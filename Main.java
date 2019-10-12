@@ -60,6 +60,7 @@ public class Main {
         Customer Ralph = new RegularCustomer();
         Customer Rachel = new RegularCustomer();
         Customer Rebecca = new RegularCustomer();
-
+        Calander cal = new Calander();
+        cal.startDay();
     }
 }
