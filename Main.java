@@ -48,18 +48,18 @@ public class Main {
         store.addToolToHashMap(Axe);
         store.addToolToHashMap(Woodfile);
         store.addToolToHashMap(Sawhorse);
-        Customer Carl = new CasualCustomer("Carl");
-        Customer Conner = new CasualCustomer("Conner");
-        Customer Carrie = new CasualCustomer("Carrie");
-        Customer Charlie = new CasualCustomer("Charlie");
-        Customer Bill = new BusinessCustomer("Bill");
-        Customer Bob = new BusinessCustomer("Bob");
-        Customer Beatrice = new BusinessCustomer("Beatrice");
-        Customer Betty = new BusinessCustomer("Betty");
-        Customer Ron = new RegularCustomer("Ron");
-        Customer Ralph = new RegularCustomer("Ralph");
-        Customer Rachel = new RegularCustomer("Rachel");
-        Customer Rebecca = new RegularCustomer("Rebecca");
+        Customer Carl = new CasualCustomer("Carl", store);
+        Customer Conner = new CasualCustomer("Conner", store);
+        Customer Carrie = new CasualCustomer("Carrie", store);
+        Customer Charlie = new CasualCustomer("Charlie", store);
+        Customer Bill = new BusinessCustomer("Bill", store);
+        Customer Bob = new BusinessCustomer("Bob", store);
+        Customer Beatrice = new BusinessCustomer("Beatrice", store);
+        Customer Betty = new BusinessCustomer("Betty", store);
+        Customer Ron = new RegularCustomer("Ron", store);
+        Customer Ralph = new RegularCustomer("Ralph", store);
+        Customer Rachel = new RegularCustomer("Rachel", store);
+        Customer Rebecca = new RegularCustomer("Rebecca", store);
         Calander cal = new Calander();
         store.newCust(Carl);
         store.newCust(Conner);
@@ -97,6 +97,6 @@ public class Main {
         store.addToolToHashMap(Woodfile);
         store.addToolToHashMap(Sawhorse);
         System.out.println(cal.startDay());
-        store.addCustomerToHashMap(Carl, Brush);
+        Carl.rent();
     }
 }

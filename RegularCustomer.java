@@ -8,6 +8,10 @@ public class RegularCustomer extends Customer{
 		setCustomerBehavior(new RegularCustomerBehavior());
 	}
 
+	public RegularCustomer(String name, HardwareStore s){
+		super(name, s);
+		setCustomerBehavior(new RegularCustomerBehavior());
+	}
 
 	public int rentTools() {
 		return 0;

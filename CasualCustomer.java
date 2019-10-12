@@ -8,6 +8,11 @@ public class CasualCustomer extends Customer{
 		setCustomerBehavior(new CasualCustomerBehavior());
 	}
 
+	public CasualCustomer(String name, HardwareStore s){
+		super(name, s);
+		setCustomerBehavior(new CasualCustomerBehavior());
+	}
+
 
 	public int rentTools() {
 		return 0;

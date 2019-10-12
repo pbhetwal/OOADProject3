@@ -20,7 +20,8 @@ public class Customer implements Observer, DisplayElement{
 		this.name = name;
 	}
 
-	public Customer(HardwareStore s){
+	public Customer(String name, HardwareStore s){
+		this.name = name;
 		store = s;
     }
 
@@ -83,9 +84,18 @@ public class Customer implements Observer, DisplayElement{
 	public void rent(){
 		int numTools = cb.rentTools();
 		setDaysLeft(cb.calcDays());
-		HashMap temp = store.getMap();
-		Iterator it;
-
+		HashMap<Tools, Customer> temp = store.getMap();
+		Iterator it = temp.entrySet().iterator();
+		while(numTools != 0){
+			Map.Entry elem = (Map.Entry)it.next();
+			System.out.println(elem.getKey());
+			if(elem.getValue() == null){
+				store.addCustomerToHashMap(this, (Tools)elem.getKey());
+				numTools--;
+			}
+			//System.out.println((Tools)elem.getKey().getName());
+		}
+		
 	}
 
 }

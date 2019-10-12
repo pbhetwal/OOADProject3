@@ -14,6 +14,7 @@ class HardwareStore implements Observer, DisplayElement{
 	private int extensionCord = 5;
 	private int accessoryKit = 25;
 	private int protectiveGear = 30;
+	private int toolsRented = 0;
 
 	private HardwareStore() {
 		System.out.println("Our hardware rental store is now open!");
@@ -68,7 +69,7 @@ class HardwareStore implements Observer, DisplayElement{
 		}
 	}
 
-public String chooseOption(){
+	public String chooseOption(){
 		double rand;
 		rand = (Math.random()*((3 - 1) + 1)) + 1;
 		if (rand == 1){
@@ -116,8 +117,16 @@ public String chooseOption(){
 		return;
 	}
 
-	public HashMap getMap() {
+	public HashMap<Tools, Customer> getMap() {
 		return hmap;
+	}
+
+	public int getToolsRented(){
+		return toolsRented;
+	}
+
+	public void setToolsRented(int num){
+		toolsRented = num;
 	}
 
 
