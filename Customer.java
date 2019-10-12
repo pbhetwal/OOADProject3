@@ -90,6 +90,7 @@ public class Customer implements Observer, DisplayElement{
 			Map.Entry elem = (Map.Entry)it.next();
 			if(elem.getValue() == null){
 				store.addCustomerToHashMap(this, (Tools)elem.getKey());
+				System.out.println("They are renting the tool for " + daysLeft + " day(s)");
 				numTools--;
 			}
 			//System.out.println((Tools)elem.getKey().getName());
