@@ -88,14 +88,13 @@ public class Customer implements Observer, DisplayElement{
 		Iterator it = temp.entrySet().iterator();
 		while(numTools != 0){
 			Map.Entry elem = (Map.Entry)it.next();
-			System.out.println(elem.getKey());
 			if(elem.getValue() == null){
 				store.addCustomerToHashMap(this, (Tools)elem.getKey());
 				numTools--;
 			}
 			//System.out.println((Tools)elem.getKey().getName());
 		}
-		
+
 	}
 
 }
