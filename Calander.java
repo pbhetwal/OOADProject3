@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.LinkedList;
 
-public class Calander<T> implements Subject {
+public class Calander<T extends Observer> implements Subject<T> {
     private List<T> observers;
     private int day;
 
@@ -10,11 +10,11 @@ public class Calander<T> implements Subject {
         observers = new LinkedList<T>();
     }
     public void registerObserver(T observer){
-        observers.add(T);
+        observers.add(observer);
     }
     public void removeObserver(){
         for(T obs: observers){
-            observers.remove();
+            observers.remove(0);
         }
 
     }
@@ -25,7 +25,7 @@ public class Calander<T> implements Subject {
     }
 
     public String startDay() {
-        return "Day " + day.toString() + " is starting!";
+        return "Day " + Integer.toString(day) + " is starting!";
     }
 
     public void endDay() {
