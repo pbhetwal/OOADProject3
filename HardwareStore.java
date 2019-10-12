@@ -10,10 +10,11 @@ class HardwareStore implements Observer, DisplayElement{
 	private Subject Calender;
 	private HashMap<Tools, Customer> hmap = new HashMap<Tools, Customer>();
 
-	private HardwareStore(){
+	private HardwareStore() {
 		System.out.println("Our hardware rental store is now open!");
 
 	}
+
 	public static HardwareStore getInstance(){
 		return ins; 
 	}
@@ -28,11 +29,11 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 
 	public void addToolToHashMap(Tools tool){
-		hmap.put(tool, NULL);
+		hmap.put(tool, null);
 	}
 
 	public void addCustomerToHashMap(Customer customer, Tools tool){
-		if(hmap.get(tool) != NULL){
+		if(hmap.get(tool) != null){
 			System.out.println("Tool already rented by a customer");
 		}
 		else{
