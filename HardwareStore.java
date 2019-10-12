@@ -9,6 +9,9 @@ class HardwareStore implements Observer, DisplayElement{
 	private Customer customers;
 	private Subject Calender;
 	private HashMap<Tools, Customer> hmap = new HashMap<Tools, Customer>();
+	private int extensionCord = 5;
+	private int accessoryKit = 25;
+	private int protectiveGear = 30;
 
 	private HardwareStore() {
 		System.out.println("Our hardware rental store is now open!");
@@ -38,6 +41,24 @@ class HardwareStore implements Observer, DisplayElement{
 		}
 		else{
 			hmap.put(tool, customer);
+		}
+	}
+
+	public static int additonalOptions(){
+		int price = 0;
+		double rand;
+		String chooseOption(){
+			rand = (Math.random()*((3 - 1) + 1)) + 1;
+			if (rand == 1){
+				return ""
+			}
+		}
+		double num = (Math.random()*((6 - 0) + 1)) + 0;
+		if(num == 0){
+			return 0;
+		}
+		else{
+
 		}
 	}
 

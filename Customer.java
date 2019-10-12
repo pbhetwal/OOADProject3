@@ -48,8 +48,9 @@ public class Customer implements Observer, DisplayElement{
 		return this.daysLeft;
 	}
 
-	public int getRand(double min, double max){
-		double num = (Math.random()*((max - min) + 1)) + min;
+
+	public static int getRand(int min, int max){
+		int num = (Math.random()*((max - min) + 1)) + min;
 		return num;
 	}
 
