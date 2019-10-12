@@ -30,7 +30,7 @@ class HardwareStore implements Observer, DisplayElement{
 
 		custPrice += priceMap.get(c);
 		String custName = c.getName();
-		System.out.println("Customer "+ custName + " is checking out and paying "+ custPrice +" for the following tools: ");
+		System.out.println("Customer "+ custName + " is checking out and paying "+ custPrice);
 	}
 
 	public void calcPrice(Tools t, Customer c){
@@ -58,6 +58,9 @@ class HardwareStore implements Observer, DisplayElement{
 		else{
 			hmap.put(tool, customer);
 			calcPrice(tool, customer);
+			String custName = customer.getName();
+			String toolName = tool.getName();
+			System.out.println("Customer "+ custName + " is adding tool "+ toolName +"to their shopping cart");
 		}
 	}
 
