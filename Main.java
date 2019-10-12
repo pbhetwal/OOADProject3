@@ -98,5 +98,7 @@ public class Main {
         store.addToolToHashMap(Sawhorse);
         System.out.println(cal.startDay());
         Carl.rent();
+        store.allActiveRentals();
+        store.allToolsLeft();
     }
 }

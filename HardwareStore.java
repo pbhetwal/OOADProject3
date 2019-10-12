@@ -2,6 +2,7 @@
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Iterator;
 
 class HardwareStore implements Observer, DisplayElement{
 	private static HardwareStore ins = new HardwareStore();
@@ -38,8 +39,10 @@ class HardwareStore implements Observer, DisplayElement{
 			Map.Entry elem = (Map.Entry)it.next();
 
 			if(elem.getValue() != null){
-				String cName = (Customer)elem.getValue().getName();
-				String tName = (Tools)elem.getKey().getName();
+				Customer c = (Customer)elem.getValue();
+				String cName = c.getName();
+				Tools t = (Tools)elem.getKey();
+				String tName = t.getName();
 				System.out.println(cName + " is currently renting "+ tName);
 			}
 		}
@@ -53,7 +56,8 @@ class HardwareStore implements Observer, DisplayElement{
 			Map.Entry elem = (Map.Entry)it.next();
 
 			if(elem.getValue() == null){
-				String tName = (Tools)elem.getKey().getName();
+				Tools t = (Tools)elem.getKey();
+				String tName = t.getName();
 				System.out.println(tName);
 			}
 		}
