@@ -64,7 +64,7 @@ class HardwareStore implements Observer, DisplayElement{
 			calcPrice(tool, customer);
 			String custName = customer.getName();
 			String toolName = tool.getName();
-			System.out.println("Customer "+ custName + " is adding tool "+ toolName +"to their shopping cart");
+			System.out.println("Customer "+ custName + " is adding tool "+ toolName +" to their shopping cart");
 		}
 	}
 

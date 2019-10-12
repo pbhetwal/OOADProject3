@@ -9,12 +9,13 @@ public class BusinessCustomerBehavior implements CustomerBehavior{
 
 	}
 
-	public static int rentTools() {
+
+	public int rentTools() {
 		randToolNum = 3;
 		return randToolNum;
 	}
 
-	public static int calcDays(){
+	public int calcDays(){
 		randNumDays = 7;
 		return randNumDays;
 	}
