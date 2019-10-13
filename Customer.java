@@ -99,6 +99,7 @@ public class Customer implements Observer, DisplayElement{
 		}
 
 		rent();
+		checkOut();
 		
 	}
 
@@ -108,6 +109,15 @@ public class Customer implements Observer, DisplayElement{
 
 	public void changeAmount(){
 
+	}
+
+	public void checkOut(){
+		int custPrice = store.additonalOptions();
+		HashMap<String, Integer> priceMap = store.getPriceMap();
+		custPrice += priceMap.get(getName());
+		String custName = getName();
+		store.setPriceMap(custName, custPrice);
+		System.out.println("Customer "+ custName + " is checking out and paying "+ custPrice);
 	}
 
 	public void rent(){
