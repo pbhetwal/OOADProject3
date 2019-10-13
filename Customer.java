@@ -82,9 +82,9 @@ public class Customer implements Observer, DisplayElement{
 		Iterator it = toolTimeMap.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry e = (Map.Entry)it.next();
-			if (e.getValue() != 0){
-				Tools t = e.getKey();
-				int i = e.getValue();
+			if ((int)e.getValue() != 0){
+				Tools t = (Tools)e.getKey();
+				int i = (int)e.getValue();
 				i--;
 				toolTimeMap.put(t,i);
 			}
