@@ -80,12 +80,18 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 
 	public void setTotalPrice(int tp){
-		TotalPrice = tp;
+		TotalPrice = TotalPrice + tp;
+	}
+
+	public void printDayEarnings(){
+		int p = getTotalPrice();
+		System.out.println("The Store made "+ p +" dollars today");
 	}
 	public void calcPrice(Tools t, Customer c){
 		int price = priceMap.get(c.getName());
 		price += t.getPrice();
 		priceMap.put(c.getName(), price);
+		setTotalPrice(price);
 	}
 	public void returnTools(Customer customer, Tools tool){
 		if(hmap.get(tool) == customer){
@@ -185,7 +191,8 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 
 	public void update(){
-
+		allActiveRentals();
+		allToolsLeft();
 
 	}
 
