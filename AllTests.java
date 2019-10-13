@@ -1,12 +1,18 @@
+// Java imports 
+import java.io.*;
+
 // Junit imports
 import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.After;
+import org.junit.Before;
 
 // Program imports 
 import java.util.HashMap;
 
 // All our tests
 public class AllTests{
+
 	// Test 1: Test to ensure singleton is behaving properly 
 	@Test
 	public void testSingleton(){
@@ -22,6 +28,7 @@ public class AllTests{
 		HashMap<Tools, Customer> map = store.getMap();
 
 		assertNull(map.get(Brush));
+		map.clear();
 
 	}
 	// Test 3: Test to ensure hash map has value customer for tool with customer 
@@ -34,8 +41,31 @@ public class AllTests{
 		Customer Carl = new CasualCustomer("Carl", store);
 		store.setHashMap(Brush, Carl);
 		HashMap<Tools, Customer> map = store.getMap();
-		
+
 		assertSame(Carl, map.get(Brush));
+		map.clear();
 	} 
+
+	// Test 4: Test to ensure allActiveRentals() is behaving correctly 
+	@Test 
+	public void testActiveRentals(){
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(out)); 
+
+		HardwareStore store = HardwareStore.getInstance();
+		Tools Brush = new PaintingTool("Brush");
+
+		store.addToolToHashMap(Brush);
+		Customer Carl = new CasualCustomer("Carl", store);
+		store.setHashMap(Brush, Carl);
+		HashMap<Tools, Customer> map = store.getMap();
+		store.allActiveRentals();
+
+		String expected = "Active Rentals are as follows: \nCarl is currently renting Brush\n"; 
+	
+		assertEquals(expected, out.toString());
+	}
+
+
 }
 
