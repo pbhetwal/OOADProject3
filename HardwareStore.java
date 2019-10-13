@@ -162,6 +162,10 @@ class HardwareStore implements Observer, DisplayElement{
 		return hmap;
 	}
 
+	public void setHashMap(Tools t, Customer c) {
+		hmap.put(t,c);
+	}
+
 	public int getToolsRented(){
 		return toolsRented;
 	}
