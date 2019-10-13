@@ -1,6 +1,5 @@
 // Junit imports
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 // Program imports 
@@ -13,13 +12,24 @@ public class AllTests{
 	}
 	// Test 2: Test to ensure hash map has value null for tool without customer 
 	@Test
-	public void testHashMap(){
+	public void testHashMapNull(){
 		HardwareStore store = HardwareStore.getInstance();
 		Tools Brush = new PaintingTool("Brush");
 		store.addToolToHashMap(Brush);
 		HashMap<Tools, Customer> map = store.getMap();
-		assertNull(map.get("Brush"));
+		assertNull(map.get(Brush));
 
 	}
+	// Test 3: Test to ensure hash map has value customer for tool with customer 
+	@Test
+	public void testHashMapCustomer(){
+		HardwareStore store = HardwareStore.getInstance();
+		Tools Brush = new PaintingTool("Brush");
+		store.addToolToHashMap(Brush);
+		Customer Carl = new CasualCustomer("Carl", store);
+		store.setHashMap(Brush, Carl);
+		HashMap<Tools, Customer> map = store.getMap();
+		assertSame(Carl, map.get(Brush));
+	} 
 }
 
