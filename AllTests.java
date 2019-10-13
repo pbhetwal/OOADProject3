@@ -4,6 +4,8 @@ import org.junit.Test;
 
 // Program imports 
 import java.util.HashMap;
+
+// All our tests
 public class AllTests{
 	// Test 1: Test to ensure singleton is behaving properly 
 	@Test
