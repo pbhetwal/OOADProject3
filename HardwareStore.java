@@ -153,7 +153,7 @@ class HardwareStore implements Observer, DisplayElement{
 		return price;
 	}
 
-	public void update(){
+	public void checkAvailable(){
 		if(24 - toolsRented < 3){
 			allowBusinessCustomer = false;
 			businessRentAmt = 0;
@@ -182,6 +182,10 @@ class HardwareStore implements Observer, DisplayElement{
 			casualRentAmt = 2;
 			regularRentAmt = 3;
 		}
+	}
+
+	public void update(){
+
 
 	}
 

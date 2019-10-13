@@ -4,8 +4,6 @@
 //
 
 public interface CustomerBehavior{
-
-	private maxAmt;
 	public void setMaxAmt(int num);
 	public int getRand(int min, int max);
 

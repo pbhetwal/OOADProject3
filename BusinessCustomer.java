@@ -23,6 +23,8 @@ public class BusinessCustomer extends Customer{
 	}
 
 
-
-
+	public void changeAmount(){
+		int num = store.getBusinessRentAmt();
+		cb.setMaxAmt(num);
+	}
 }

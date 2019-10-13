@@ -10,8 +10,8 @@ import java.util.Iterator;
 public class Customer implements Observer, DisplayElement{
 	private String name, className;
 	private int daysLeft;
-	private CustomerBehavior cb;
-	private HardwareStore store;
+	protected CustomerBehavior cb;
+	protected HardwareStore store;
 	private HashMap<Tools, Integer> toolTimeMap = new HashMap<Tools, Integer>();
 
 	public Customer(){
@@ -87,7 +87,6 @@ public class Customer implements Observer, DisplayElement{
 
 
 	public void update(){
-
 		Iterator it = toolTimeMap.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry e = (Map.Entry)it.next();
@@ -105,7 +104,13 @@ public class Customer implements Observer, DisplayElement{
 		return;
 	}
 
+	public void changeAmount(){
+
+	}
+
 	public void rent(){
+		store.checkAvailable();
+		changeAmount();
 		int numTools = cb.rentTools();
 		setDaysLeft(cb.calcDays());
 		HashMap<Tools, Customer> temp = store.getMap();

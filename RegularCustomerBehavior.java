@@ -4,9 +4,13 @@
 //
 public class RegularCustomerBehavior implements CustomerBehavior{
 	private int randToolNum, randNumDays;
+	private int maxAmt;
 
 	public RegularCustomerBehavior(){
 
+	}
+	public void setMaxAmt(int num){
+		maxAmt = num;
 	}
 	public int getRand(int min, int max){
 		int num = (int)((Math.random()*((max - min) + 1)) + min);
@@ -14,7 +18,7 @@ public class RegularCustomerBehavior implements CustomerBehavior{
 	}
 
 	public int rentTools() {
-		randToolNum = getRand(1,3);
+		randToolNum = getRand(1,maxAmt);
 		return randToolNum;
 	}
 

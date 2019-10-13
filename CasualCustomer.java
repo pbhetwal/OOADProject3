@@ -22,4 +22,9 @@ public class CasualCustomer extends Customer{
 		return 0;
 	}
 
+	public void changeAmount(){
+		int num = store.getCasualRentAmt();
+		cb.setMaxAmt(num);
+	}
+
 }

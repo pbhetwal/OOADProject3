@@ -4,6 +4,7 @@
 //
 public class CasualCustomerBehavior implements CustomerBehavior{
 	private int randToolNum, randNumDays;
+	private int maxAmt;
 
 	public CasualCustomerBehavior(){
 

@@ -21,7 +21,9 @@ public class RegularCustomer extends Customer{
 		return 0;
 	}
 
-
-
+	public void changeAmount(){
+		int num = store.getRegularRentAmt();
+		cb.setMaxAmt(num);
+	}
 
 }
