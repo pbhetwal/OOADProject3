@@ -5,7 +5,7 @@ public class Calendar<T extends Observer> implements Subject<T> {
     private static Calendar ins = new Calendar();
     private List<T> observers;
     private int day; 
-    public Calender() {
+    private Calendar() {
         day = 1;
         observers = new LinkedList<T>();
     }
