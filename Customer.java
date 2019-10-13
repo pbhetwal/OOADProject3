@@ -71,11 +71,19 @@ public class Customer implements Observer, DisplayElement{
 
 
 	public void update(){
-		daysLeft--;
-		if(daysLeft == 0){
-			//returnTools();
-			return;
+
+		HashMap<Tools, Integer> temp = toolTimeMap.getMap();
+		Iterator it = temp.entrySet(),iterator();
+		while(it.hasNext()){
+			Map.Entry e = (Map.Entry)it.next();
+			if (e.getValue() != 0){
+				Tools t = e.getKey();
+				int i = e.getValue();
+				i--;
+				toolTimeMap.put(t,i);
+			}
 		}
+		
 	}
 
 	public void announce(){
