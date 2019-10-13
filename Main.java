@@ -120,7 +120,6 @@ public class Main {
             cal.startDay();
             cal.endDay();
         }
-        Carl.rent();
         store.allActiveRentals();
         store.allToolsLeft();
     }

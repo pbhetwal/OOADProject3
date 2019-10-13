@@ -22,7 +22,7 @@ public class BusinessCustomer extends Customer{
 		return 0;
 	}
 
-
+	@Override
 	public void changeAmount(){
 		int num = store.getBusinessRentAmt();
 		cb.setMaxAmt(num);

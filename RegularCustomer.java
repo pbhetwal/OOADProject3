@@ -21,6 +21,7 @@ public class RegularCustomer extends Customer{
 		return 0;
 	}
 
+	@Override
 	public void changeAmount(){
 		int num = store.getRegularRentAmt();
 		cb.setMaxAmt(num);

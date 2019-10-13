@@ -97,6 +97,8 @@ public class Customer implements Observer, DisplayElement{
 				toolTimeMap.put(t,i);
 			}
 		}
+
+		rent();
 		
 	}
 
@@ -115,7 +117,7 @@ public class Customer implements Observer, DisplayElement{
 		setDaysLeft(cb.calcDays());
 		HashMap<Tools, Customer> temp = store.getMap();
 		Iterator it = temp.entrySet().iterator();
-		while(numTools != 0){
+		while(numTools != 0 && it.hasNext()){
 			Map.Entry elem = (Map.Entry)it.next();
 			if(elem.getValue() == null){
 				store.addCustomerToHashMap(this, (Tools)elem.getKey());

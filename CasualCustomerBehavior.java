@@ -19,7 +19,7 @@ public class CasualCustomerBehavior implements CustomerBehavior{
 	}
 
 	public int rentTools() {
-		randToolNum = (int)getRand(1,maxAmt);
+		randToolNum = (int)getRand(0,maxAmt);
 		return randToolNum;
 	}
 
