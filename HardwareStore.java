@@ -135,7 +135,6 @@ class HardwareStore implements Observer, DisplayElement{
 
 	public int additonalOptions(){
 		int price = 0;
-		String custName = customer.getName();
 		double num = (Math.random()*((6 - 0) + 1)) + 0;
 		if(num == 0){
 			return 0;
@@ -145,15 +144,15 @@ class HardwareStore implements Observer, DisplayElement{
 				String op;
 				op = chooseOption();
 				if(op == "cord"){
-					System.out.println("Customer "+ custName + " is adding option extension cord to their shopping cart");
+					System.out.printf(" and they are adding option extension cord to their shopping cart");
 					price += extensionCord;
 				}
 				else if(op == "kit"){
-					System.out.println("Customer "+ custName + " is adding option accessory kit to their shopping cart");
+					System.out.printf(" and they are adding option accessory kit to their shopping cart");
 					price += accessoryKit;
 				}
 				else{
-					System.out.println("Customer "+ custName + " is adding option protective gear to their shopping cart");
+					System.out.printf(" and they are adding option protective gear to their shopping cart");
 					price += protectiveGear;
 				}
 				num -= 1;
