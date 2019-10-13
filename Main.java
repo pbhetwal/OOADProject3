@@ -116,7 +116,10 @@ public class Main {
         for(Customer c: customers){
             cal.registerObserver(c);
         }
-        System.out.println(cal.startDay());
+        for(int i = 0; i < 34; i++){
+            cal.startDay();
+            cal.endDay();
+        }
         Carl.rent();
         store.allActiveRentals();
         store.allToolsLeft();

@@ -6,9 +6,6 @@ import java.util.Iterator;
 
 class HardwareStore implements Observer, DisplayElement{
 	private static HardwareStore ins = new HardwareStore();
-	private Tools tools;
-	private Customer customers;
-	private Subject Calender;
 	private int TotalPrice;
 	private HashMap<Tools, Customer> hmap = new HashMap<Tools, Customer>();
 	private HashMap<String, Integer> priceMap = new HashMap<String, Integer>();
@@ -16,6 +13,12 @@ class HardwareStore implements Observer, DisplayElement{
 	private int accessoryKit = 25;
 	private int protectiveGear = 30;
 	private int toolsRented = 0;
+	private boolean allowBusinessCustomer = true;
+	private boolean allowRegularCustomer = true;
+	private boolean allowCasualCustomer = true;
+	private int businessRentAmt;
+	private int casualRentAmt;
+	private int regularRentAmt;
 
 	private HardwareStore() {
 		System.out.println("Our hardware rental store is now open!");
@@ -151,7 +154,35 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 
 	public void update(){
-		return;
+		if(24 - toolsRented < 3){
+			allowBusinessCustomer = false;
+			businessRentAmt = 0;
+			casualRentAmt = 2;
+			regularRentAmt = 2;
+
+		}
+		else if(24 - toolsRented == 0){
+			allowBusinessCustomer = false;
+			allowCasualCustomer = false;
+			allowRegularCustomer = false;
+		}
+		else if(24 - toolsRented == 1){
+			allowBusinessCustomer = false;
+			allowCasualCustomer = true;
+			allowRegularCustomer = true;
+			businessRentAmt = 0;
+			casualRentAmt = 1;
+			regularRentAmt = 1;
+		}
+		else{
+			allowBusinessCustomer = true;
+			allowCasualCustomer = true;
+			allowRegularCustomer = true;
+			businessRentAmt = 3;
+			casualRentAmt = 2;
+			regularRentAmt = 3;
+		}
+
 	}
 
 	public void announce(){
@@ -174,5 +205,16 @@ class HardwareStore implements Observer, DisplayElement{
 		toolsRented = num;
 	}
 
+	public int getBusinessRentAmt(){
+		return businessRentAmt;
+	}
+
+	public int getCasualRentAmt(){
+		return casualRentAmt;
+	}
+
+	public int getRegularRentAmt(){
+		return regularRentAmt;
+	}
 
 }
