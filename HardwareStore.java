@@ -207,7 +207,7 @@ class HardwareStore implements Observer, DisplayElement{
 		return hmap;
 	}
 
-	public HashMap<Tools, Integer> getPriceMap() {
+	public HashMap<String, Integer> getPriceMap() {
 		return priceMap; 
 	}
 
