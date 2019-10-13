@@ -136,15 +136,15 @@ class HardwareStore implements Observer, DisplayElement{
 				String op;
 				op = chooseOption();
 				if(op == "cord"){
-					System.out.println(" and they are adding option extension cord to their shopping cart");
+					System.out.println(" Adding option extension cord to their shopping cart before check out");
 					price += extensionCord;
 				}
 				else if(op == "kit"){
-					System.out.println(" and they are adding option accessory kit to their shopping cart");
+					System.out.println(" Adding option accessory kit to their shopping cart");
 					price += accessoryKit;
 				}
 				else{
-					System.out.println(" and they are adding option protective gear to their shopping cart");
+					System.out.println(" Adding option protective gear to their shopping cart");
 					price += protectiveGear;
 				}
 				num --;
