@@ -17,8 +17,10 @@ public class AllTests{
 	public void testHashMapNull(){
 		HardwareStore store = HardwareStore.getInstance();
 		Tools Brush = new PaintingTool("Brush");
+
 		store.addToolToHashMap(Brush);
 		HashMap<Tools, Customer> map = store.getMap();
+
 		assertNull(map.get(Brush));
 
 	}
@@ -27,10 +29,12 @@ public class AllTests{
 	public void testHashMapCustomer(){
 		HardwareStore store = HardwareStore.getInstance();
 		Tools Brush = new PaintingTool("Brush");
+
 		store.addToolToHashMap(Brush);
 		Customer Carl = new CasualCustomer("Carl", store);
 		store.setHashMap(Brush, Carl);
 		HashMap<Tools, Customer> map = store.getMap();
+		
 		assertSame(Carl, map.get(Brush));
 	} 
 }
