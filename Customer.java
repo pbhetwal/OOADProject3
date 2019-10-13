@@ -136,11 +136,11 @@ public class Customer implements Observer, DisplayElement{
 				z++;
 				store.setToolsRented(z);
 				System.out.println("They are renting the tool for " + daysLeft + " day(s)");
+				checkOut();
 				numTools--;
 			}
 			//System.out.println((Tools)elem.getKey().getName());
 		}
-		checkOut();
 	}
 
 }
