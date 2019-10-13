@@ -82,7 +82,8 @@ public class Customer implements Observer, DisplayElement{
 		Iterator it = toolTimeMap.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry e = (Map.Entry)it.next();
-			if (e.getValue() != 0){
+			int g = e.getValue();
+			if (g != 0){
 				Tools t = e.getKey();
 				int i = e.getValue();
 				i--;
