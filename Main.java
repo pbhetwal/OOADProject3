@@ -118,9 +118,9 @@ public class Main {
         }
         for(int i = 0; i < 34; i++){
             cal.startDay();
+            //store.allActiveRentals();
+            //store.allToolsLeft();
             cal.endDay();
         }
-        store.allActiveRentals();
-        store.allToolsLeft();
     }
 }

@@ -18,7 +18,7 @@ public class RegularCustomerBehavior implements CustomerBehavior{
 	}
 
 	public int rentTools() {
-		randToolNum = getRand(0,maxAmt);
+		randToolNum = getRand(1,maxAmt);
 		return randToolNum;
 	}
 

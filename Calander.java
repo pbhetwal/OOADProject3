@@ -30,6 +30,9 @@ public class Calander<T extends Observer> implements Subject<T> {
     }
 
     public void endDay() {
+        HardwareStore tmp = HardwareStore.getInstance();
+        tmp.printDayEarnings();
         day++;
+
     }
 }
