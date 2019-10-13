@@ -57,11 +57,11 @@ public class AllTests{
 		Customer Carl = new CasualCustomer("Carl", store);
 		store.setHashMap(Brush, Carl);
 		HashMap<Tools, Customer> map = store.getMap();
-		store.allActiveRentals();
-
-		String expected = "Active Rentals are as follows: \nCarl is currently renting Brush\n"; 
+		store.allActiveRentals(); 
 	
-		assertEquals(expected, out.toString());
+		assertEquals("Active Rentals are as follows: \nCarl is currently renting Brush\n", out.toString());
+
+		map.clear();
 	}
 
 
