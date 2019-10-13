@@ -5,6 +5,7 @@ import java.util.LinkedList;
 public class Main {
     public static void main(String[] args) {
         HardwareStore store = HardwareStore.getInstance();
+        List<Customer> customers = new LinkedList<Customer>();
         Tools Brush = new PaintingTool("Brush");
         Tools Canvas = new PaintingTool("Canvas");
         Tools PaintPan = new PaintingTool("PaintPan");
@@ -62,6 +63,18 @@ public class Main {
         Customer Ralph = new RegularCustomer("Ralph", store);
         Customer Rachel = new RegularCustomer("Rachel", store);
         Customer Rebecca = new RegularCustomer("Rebecca", store);
+        customers.add(Carl);
+        customers.add(Conner);
+        customers.add(Carrie);
+        customers.add(Charlie);
+        customers.add(Bill);
+        customers.add(Bob);
+        customers.add(Beatrice);
+        customers.add(Betty);
+        customers.add(Ron);
+        customers.add(Ralph);
+        customers.add(Rachel);
+        customers.add(Rebecca);
         Calander cal = new Calander();
         store.newCust(Carl);
         store.newCust(Conner);
