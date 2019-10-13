@@ -30,10 +30,19 @@ public class Customer implements Observer, DisplayElement{
 		this.cb = cb;
 	}
 
-	public void returnTool(Tools t){
+	public void returnTool(){
 
 		HashMap<Tools, Customer> temp = store.getMap();
-		temp.put(t, null);
+		Iterator it = toolTimeMap.entrySet().iterator();
+		while(it.hasNext()){
+			Map.Entry e = (Map.Entry)it.next();
+			if ((int)e.getValue() == 0){
+				Tools t = (Tools)e.getKey();
+				int i = (int)e.getValue();
+				toolTimeMap.put(t,i);
+				store.setHashMap(t,null);
+			}
+		}
 		
 	}
 
