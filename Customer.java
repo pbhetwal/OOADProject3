@@ -115,6 +115,9 @@ public class Customer implements Observer, DisplayElement{
 			if(elem.getValue() == null){
 				store.addCustomerToHashMap(this, (Tools)elem.getKey());
 				toolTimeMap.put((Tools)elem.getKey(), daysLeft);
+				int z = store.getToolsRented();
+				z++;
+				store.setToolsRented(z);
 				System.out.println("They are renting the tool for " + daysLeft + " day(s)");
 				numTools--;
 			}
