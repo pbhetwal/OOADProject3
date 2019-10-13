@@ -32,7 +32,7 @@ public class Customer implements Observer, DisplayElement{
 
 	public void returnTool(Tools t){
 
-		HashMap<Tools, Integer> temp = store.getMap();
+		HashMap<Tools, Customer> temp = store.getMap();
 		temp.put(t, null);
 		
 	}
@@ -79,8 +79,7 @@ public class Customer implements Observer, DisplayElement{
 
 	public void update(){
 
-		HashMap<Tools, Integer> temp = toolTimeMap.getMap();
-		Iterator it = temp.entrySet().iterator();
+		Iterator it = toolTimeMap.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry e = (Map.Entry)it.next();
 			if (e.getValue() != 0){
