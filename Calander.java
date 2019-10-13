@@ -26,6 +26,8 @@ public class Calander<T extends Observer> implements Subject<T> {
 
     public void startDay() {
         System.out.println("Day " + Integer.toString(day) + " is starting!");
+        Customer tmp = (Customer)observers.get(1);
+        tmp.returnTool();
         notifyObserver();
     }
 
