@@ -4,6 +4,7 @@ import java.util.LinkedList;
 public class Calander<T extends Observer> implements Subject<T> {
     private List<T> observers;
     private int day;
+    private Customer cust;
 
     public Calander() {
         day = 1;
@@ -26,6 +27,7 @@ public class Calander<T extends Observer> implements Subject<T> {
 
     public String startDay() {
         return "Day " + Integer.toString(day) + " is starting!";
+        cust.returnTool();
     }
 
     public void endDay() {
