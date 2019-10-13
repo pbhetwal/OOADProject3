@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.LinkedList;
 
 public class Main {
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         HardwareStore store = HardwareStore.getInstance();
         List<Customer> customers = new LinkedList<Customer>();
@@ -111,6 +112,10 @@ public class Main {
         store.addToolToHashMap(Saw);
         store.addToolToHashMap(Woodfile);
         store.addToolToHashMap(Sawhorse);
+        cal.registerObserver(store);
+        for(Customer c: customers){
+            cal.registerObserver(c);
+        }
         System.out.println(cal.startDay());
         Carl.rent();
         store.allActiveRentals();
