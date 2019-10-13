@@ -203,6 +203,10 @@ class HardwareStore implements Observer, DisplayElement{
 	public HashMap<Tools, Customer> getMap() {
 		return hmap;
 	}
+ 
+	public HashMap<String, Integer> getPriceMap() {
+		return priceMap; 
+	}
 
 	public void setHashMap(Tools t, Customer c) {
 		hmap.put(t,c);

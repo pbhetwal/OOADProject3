@@ -1,12 +1,10 @@
 // Java imports 
 import java.io.*;
+import java.util.HashMap;
 
 // Junit imports
 import static org.junit.Assert.*;
 import org.junit.Test;
-
-// Program imports 
-import java.util.HashMap;
 
 // All our tests
 public class AllTests{
@@ -17,7 +15,21 @@ public class AllTests{
 		assertEquals(true, HardwareStore.getInstance() == HardwareStore.getInstance());
 	}
 
-	// Test 2: Test to ensure addToolToHashMap(Tool) is behaving correctly 
+	// Test 2: Test to ensure newCust(Customer) is behaving correctly 
+	@Test
+	public void testNewCust(){
+		HardwareStore store = HardwareStore.getInstance();
+		Customer Carl = new CasualCustomer("Carl", store);
+
+		store.newCust(Carl);
+		HashMap<String, Integer> map = store.getPriceMap();
+
+		assertEquals(false, map.isEmpty()); 
+
+		map.clear();
+	}
+
+	// Test 3: Test to ensure addToolToHashMap(Tool) is behaving correctly 
 	@Test
 	public void testAddToolToHashMap(){
 		HardwareStore store = HardwareStore.getInstance();
@@ -30,7 +42,7 @@ public class AllTests{
 
 		map.clear();
 	}
-	// Test 3: Test to ensure hash map has value null for tool without customer 
+	// Test 4: Test to ensure hash map has value null for tool without customer 
 	@Test
 	public void testHashMapNull(){
 		HardwareStore store = HardwareStore.getInstance();
@@ -43,7 +55,7 @@ public class AllTests{
 		map.clear();
 
 	}
-	// Test 4: Test to ensure hash map has value customer for tool with customer 
+	// Test 5: Test to ensure hash map has value customer for tool with customer 
 	@Test
 	public void testHashMapCustomer(){
 		HardwareStore store = HardwareStore.getInstance();
@@ -58,7 +70,7 @@ public class AllTests{
 		map.clear();
 	} 
 
-	// Test 5: Test to ensure allActiveRentals() is behaving correctly 
+	// Test 6: Test to ensure allActiveRentals() is behaving correctly 
 	@Test 
 	public void testActiveRentals(){
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -79,7 +91,7 @@ public class AllTests{
 		map.clear();
 	}
 
-	// Test 6: Test to ensure allToolsLeft() is behaving correctly 
+	// Test 7: Test to ensure allToolsLeft() is behaving correctly 
 	@Test
 	public void testToolsLeft(){
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -99,7 +111,6 @@ public class AllTests{
 
 		map.clear();	
 	}
-
 
 }
 
