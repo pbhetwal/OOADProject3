@@ -72,6 +72,8 @@ class HardwareStore implements Observer, DisplayElement{
 		custPrice += priceMap.get(c.getName());
 		String custName = c.getName();
 		System.out.println("Customer "+ custName + " is checking out and paying "+ custPrice);
+		priceMap.remove(c.getName());
+		priceMap.put(c.getName(),0);
 	}
 
 
