@@ -99,7 +99,6 @@ public class Customer implements Observer, DisplayElement{
 		}
 
 		rent();
-		checkOut();
 		
 	}
 
@@ -140,7 +139,7 @@ public class Customer implements Observer, DisplayElement{
 			}
 			//System.out.println((Tools)elem.getKey().getName());
 		}
-
+		checkOut();
 	}
 
 }
