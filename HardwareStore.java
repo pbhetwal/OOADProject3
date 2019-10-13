@@ -133,7 +133,6 @@ class HardwareStore implements Observer, DisplayElement{
 		}
 		else{
 			while (num != 0){
-				
 				String op;
 				op = chooseOption();
 				if(op == "cord"){
