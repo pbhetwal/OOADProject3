@@ -76,7 +76,7 @@ public class Main {
         customers.add(Ralph);
         customers.add(Rachel);
         customers.add(Rebecca);
-        Calander cal = new Calander();
+        Calendar cal = Calendar.getInstance()
         store.newCust(Carl);
         store.newCust(Conner);
         store.newCust(Carrie);
