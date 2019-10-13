@@ -127,7 +127,7 @@ class HardwareStore implements Observer, DisplayElement{
 
 	public int additonalOptions(){
 		int price = 0;
-		double num = (Math.random()*((6 - 0) + 1)) + 0;
+		int num = (int)(Math.random()*((6 - 0) + 1)) + 0;
 		if(num == 0){
 			return 0;
 		}
@@ -136,18 +136,18 @@ class HardwareStore implements Observer, DisplayElement{
 				String op;
 				op = chooseOption();
 				if(op == "cord"){
-					System.out.printf(" and they are adding option extension cord to their shopping cart");
+					System.out.println(" and they are adding option extension cord to their shopping cart");
 					price += extensionCord;
 				}
 				else if(op == "kit"){
-					System.out.printf(" and they are adding option accessory kit to their shopping cart");
+					System.out.println(" and they are adding option accessory kit to their shopping cart");
 					price += accessoryKit;
 				}
 				else{
-					System.out.printf(" and they are adding option protective gear to their shopping cart");
+					System.out.println(" and they are adding option protective gear to their shopping cart");
 					price += protectiveGear;
 				}
-				num -= 1;
+				num --;
 			}
 		}
 		return price;
@@ -188,7 +188,7 @@ class HardwareStore implements Observer, DisplayElement{
 
 		allActiveRentals();
 		allToolsLeft();
-
+		setTotalPrice(0);
 	}
 
 	public void announce(){
@@ -201,6 +201,10 @@ class HardwareStore implements Observer, DisplayElement{
 
 	public HashMap<String, Integer> getPriceMap() {
 		return priceMap; 
+	}
+
+	public void setPriceMap(String c, int amt){
+		priceMap.put(c, amt);
 	}
 
 	public void setHashMap(Tools t, Customer c) {

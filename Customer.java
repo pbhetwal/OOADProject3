@@ -112,10 +112,11 @@ public class Customer implements Observer, DisplayElement{
 	}
 
 	public void checkOut(){
-		int custPrice = additonalOptions();
+		int custPrice = store.additonalOptions();
 		HashMap<String, Integer> priceMap = store.getPriceMap();
 		custPrice += priceMap.get(getName());
 		String custName = getName();
+		store.setPriceMap(custName, custPrice);
 		System.out.println("Customer "+ custName + " is checking out and paying "+ custPrice);
 	}
 
