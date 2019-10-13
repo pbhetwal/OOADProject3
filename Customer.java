@@ -30,6 +30,13 @@ public class Customer implements Observer, DisplayElement{
 		this.cb = cb;
 	}
 
+	public void returnTool(Tools t){
+
+		HashMap<Tools, Integer> temp = store.getMap();
+		temp.put(t, null);
+		
+	}
+
 	//to be overridden
 	public int rentTools() {
 		return 0;
@@ -73,7 +80,7 @@ public class Customer implements Observer, DisplayElement{
 	public void update(){
 
 		HashMap<Tools, Integer> temp = toolTimeMap.getMap();
-		Iterator it = temp.entrySet(),iterator();
+		Iterator it = temp.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry e = (Map.Entry)it.next();
 			if (e.getValue() != 0){
