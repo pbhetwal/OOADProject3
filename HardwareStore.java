@@ -19,6 +19,7 @@ class HardwareStore implements Observer, DisplayElement{
 	private int businessRentAmt;
 	private int casualRentAmt;
 	private int regularRentAmt;
+	private int totalSimulationMoney = 0;
 
 	private HardwareStore() {
 		System.out.println("Our hardware rental store is now open!");
@@ -29,6 +30,13 @@ class HardwareStore implements Observer, DisplayElement{
 		return ins; 
 	}
 
+	public void setTotalSimMoney(int sim){
+		totalSimulationMoney = totalSimulationMoney + sim;
+	}
+
+	public int getTotalSimMoney(){
+		return this.totalSimulationMoney;
+	}
 
 	public void newCust(Customer c){
 		priceMap.put(c.getName(), 0);
@@ -85,6 +93,7 @@ class HardwareStore implements Observer, DisplayElement{
 		priceMap.put(c.getName(), price);
 		setTotalPrice(price);
 	}
+
 	public void returnTools(Customer customer, Tools tool){
 		if(hmap.get(tool) == customer){
 			hmap.remove(tool);
