@@ -1,6 +1,6 @@
 // Java imports 
 import java.io.*;
-import java.util.HashMap;
+import java.util.*;
 
 // Junit imports
 import static org.junit.Assert.*;
@@ -70,7 +70,26 @@ public class AllTests{
 		map.clear();
 	} 
 
-	// Test 6: Test to ensure allActiveRentals() is behaving correctly 
+	// Test 6: Test to ensure setToolsRented(int)/getToolsRented() is behaving correctly 
+	@Test
+	public void testGetToolsRented(){
+		HardwareStore store = HardwareStore.getInstance();
+		Tools Brush = new PaintingTool("Brush");
+
+		store.addToolToHashMap(Brush);
+		Customer Carl = new CasualCustomer("Carl", store);
+		store.setHashMap(Brush, Carl);
+		HashMap<Tools, Customer> map = store.getMap();
+
+		store.setToolsRented(1);
+		int ret = store.getToolsRented();
+
+		assertEquals(1, ret);
+
+		map.clear();
+	}
+
+	// Test 7: Test to ensure allActiveRentals() is behaving correctly 
 	@Test 
 	public void testActiveRentals(){
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -91,7 +110,7 @@ public class AllTests{
 		map.clear();
 	}
 
-	// Test 7: Test to ensure allToolsLeft() is behaving correctly 
+	// Test 8: Test to ensure allToolsLeft() is behaving correctly 
 	@Test
 	public void testToolsLeft(){
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -112,5 +131,48 @@ public class AllTests{
 		map.clear();	
 	}
 
+	// Test 9: Test to ensure chooseOption() is behaving correctly 
+	@Test
+	public void testChooseOption(){
+		HardwareStore store = HardwareStore.getInstance();
+		String ret = store.chooseOption(); 
+
+		List<String> options = Arrays.asList("cord", "kit", "gear"); 
+
+		assertEquals(true, options.contains(ret));
+	}
+
+	// Test 10: Ensure rent() isn't allowing more than 3 rentals 
+	@Test
+	public void testRent(){
+		HardwareStore store = HardwareStore.getInstance();
+		Tools Brush = new PaintingTool("Brush");
+        Tools Canvas = new PaintingTool("Canvas");
+        Tools PaintPan = new PaintingTool("PaintPan");
+        Tools Tape = new PaintingTool("Tape");
+
+        store.addToolToHashMap(Brush);
+        store.addToolToHashMap(Canvas);
+        store.addToolToHashMap(PaintPan);
+        store.addToolToHashMap(Tape);
+        HashMap<Tools, Customer> map = store.getMap();
+
+        Customer Bob = new BusinessCustomer("Bob", store);
+        store.newCust(Bob);
+
+        /*
+        Try to rent 5 times. This should be not allowed since 
+        each customer can rent a maximum of 3 times. 
+        */
+        Bob.rent();
+        Bob.rent();
+        Bob.rent();
+        Bob.rent();
+        Bob.rent();
+
+        assertEquals(3, Collections.frequency(map.values(), Bob));
+
+        map.clear();
+    }
 }
 
