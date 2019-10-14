@@ -13,6 +13,7 @@ public class Customer implements Observer, DisplayElement{
 	private int daysLeft;
 	protected CustomerBehavior cb;
 	protected HardwareStore store;
+	private int numToolsRented = 0;
 	private HashMap<Tools, Integer> toolTimeMap = new HashMap<Tools, Integer>();
 
 	public Customer(){
@@ -138,6 +139,7 @@ public class Customer implements Observer, DisplayElement{
 				System.out.println("They are renting the tool for " + daysLeft + " day(s)");
 				checkOut();
 				numTools--;
+				numToolsRented++;
 			}
 			//System.out.println((Tools)elem.getKey().getName());
 		}

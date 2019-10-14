@@ -5,6 +5,7 @@
 
 public interface CustomerBehavior{
 	public void setMaxAmt(int num);
+	public int getMaxAmt();
 	public int getRand(int min, int max);
 
 	public int rentTools();

@@ -12,6 +12,11 @@ public class RegularCustomerBehavior implements CustomerBehavior{
 	public void setMaxAmt(int num){
 		maxAmt = num;
 	}
+
+	public int getMaxAmt(){
+		return maxAmt;
+	}
+
 	public int getRand(int min, int max){
 		int num = (int)((Math.random()*((max - min) + 1)) + min);
 		return num;

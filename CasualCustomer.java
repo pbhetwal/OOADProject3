@@ -8,8 +8,9 @@ public class CasualCustomer extends Customer{
 		setCustomerBehavior(new CasualCustomerBehavior());
 	}
 
-	public CasualCustomer(String name, HardwareStore s){
-		super(name, s);
+	public CasualCustomer(String name_, HardwareStore s){
+		setName(name_);
+		store = s;
 		setCustomerBehavior(new CasualCustomerBehavior());
 	}
 
