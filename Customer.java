@@ -127,6 +127,7 @@ public class Customer implements Observer, DisplayElement{
 		int custPrice = store.additonalOptions();
 		HashMap<String, Integer> priceMap = store.getPriceMap();
 		custPrice += priceMap.get(getName());
+		store.setTotalPrice(custPrice,"");
 		String custName = getName();
 		store.setPriceMap(custName, custPrice);
 		System.out.println("Customer "+ custName + " is checking out and paying "+ custPrice);

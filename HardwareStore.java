@@ -96,7 +96,6 @@ class HardwareStore implements Observer, DisplayElement{
 		int price = priceMap.get(c.getName());
 		price += t.getPrice();
 		priceMap.put(c.getName(), price);
-		setTotalPrice(price,"");
 	}
 
 	public void returnTools(Customer customer, Tools tool){
