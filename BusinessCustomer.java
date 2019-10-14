@@ -9,7 +9,8 @@ public class BusinessCustomer extends Customer{
 	}
 
 	public BusinessCustomer(String name, HardwareStore s){
-		super(name, s);
+		setName(name);
+		store = s;
 		setCustomerBehavior(new BusinessCustomerBehavior());
 	}
 

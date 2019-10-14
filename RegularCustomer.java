@@ -9,7 +9,8 @@ public class RegularCustomer extends Customer{
 	}
 
 	public RegularCustomer(String name, HardwareStore s){
-		super(name, s);
+		setName(name);
+		store = s;
 		setCustomerBehavior(new RegularCustomerBehavior());
 	}
 
