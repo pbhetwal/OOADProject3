@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 class HardwareStore implements Observer, DisplayElement{
 	private static HardwareStore ins = new HardwareStore();
-	private int TotalPrice;
+	private int TotalPrice = 0;
 	private HashMap<Tools, Customer> hmap = new HashMap<Tools, Customer>();
 	private HashMap<String, Integer> priceMap = new HashMap<String, Integer>();
 	private int extensionCord = 5;

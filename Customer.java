@@ -45,6 +45,7 @@ public class Customer implements Observer, DisplayElement{
 					int i = (int)e.getValue();
 					toolTimeMap.put(t,i);
 					store.setHashMap(t,null);
+					setNumToolsRented(-1);
 				}
 			}
 		}
@@ -141,21 +142,21 @@ public class Customer implements Observer, DisplayElement{
 		Iterator it = temp.entrySet().iterator();
 		int n = getNumToolsRented();
 		if(n < numTools){
-		while(numTools != 0 && it.hasNext()){
-			Map.Entry elem = (Map.Entry)it.next();
-			if(elem.getValue() == null){
-				store.addCustomerToHashMap(this, (Tools)elem.getKey());
-				toolTimeMap.put((Tools)elem.getKey(), daysLeft);
-				int z = store.getToolsRented();
-				z++;
-				store.setToolsRented(z);
-				System.out.println("They are renting the tool for " + daysLeft + " day(s)");
-				checkOut();
-				numTools--;
-				setNumToolsRented(1);
+			while(numTools != 0 && it.hasNext()){
+				Map.Entry elem = (Map.Entry)it.next();
+				if(elem.getValue() == null){
+					store.addCustomerToHashMap(this, (Tools)elem.getKey());
+					toolTimeMap.put((Tools)elem.getKey(), daysLeft);
+					int z = store.getToolsRented();
+					z++;
+					store.setToolsRented(z);
+					System.out.println("They are renting the tool for " + daysLeft + " day(s)");
+					checkOut();
+					numTools--;
+					setNumToolsRented(1);
+				}
+				//System.out.println((Tools)elem.getKey().getName());
 			}
-			//System.out.println((Tools)elem.getKey().getName());
-		}
 		}
 	}
 

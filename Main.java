@@ -121,6 +121,7 @@ public class Main {
         Random r = new Random();
         for(int i = 0; i < numDays; i++){
             int numCust = r.nextInt(customers.size() + 1);
+            System.out.println("Customers: " + numCust);
             cal.startDay();
             for(int j = 0; j < numCust; j++){
                 Customer temp = (Customer)customers.get(r.nextInt(customers.size()));
