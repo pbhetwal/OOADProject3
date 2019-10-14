@@ -79,8 +79,13 @@ class HardwareStore implements Observer, DisplayElement{
 		return this.TotalPrice;
 	}
 
-	public void setTotalPrice(int tp){
-		TotalPrice = TotalPrice + tp;
+	public void setTotalPrice(int tp, String s){
+		if(s == "end"){
+			TotalPrice = 0;
+		}
+		else{
+			TotalPrice = TotalPrice + tp;
+		}
 	}
 
 	public void printDayEarnings(){
@@ -91,7 +96,7 @@ class HardwareStore implements Observer, DisplayElement{
 		int price = priceMap.get(c.getName());
 		price += t.getPrice();
 		priceMap.put(c.getName(), price);
-		setTotalPrice(price);
+		setTotalPrice(price,"");
 	}
 
 	public void returnTools(Customer customer, Tools tool){
@@ -196,7 +201,7 @@ class HardwareStore implements Observer, DisplayElement{
 	public void update(){
 		allActiveRentals();
 		allToolsLeft();
-		setTotalPrice(0);
+		setTotalPrice(0,"end");
 	}
 
 	public void announce(){
