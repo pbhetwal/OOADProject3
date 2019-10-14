@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
 
+
 public class Customer implements Observer, DisplayElement{
 	private String name, className;
 	private int daysLeft;
@@ -38,6 +39,7 @@ public class Customer implements Observer, DisplayElement{
 			Map.Entry e = (Map.Entry)it.next();
 			if ((int)e.getValue() == 0){
 				Tools t = (Tools)e.getKey();
+				System.out.println("Customer " + getName() + " is returning tool: " + t.getName());
 				int i = (int)e.getValue();
 				toolTimeMap.put(t,i);
 				store.setHashMap(t,null);
@@ -97,8 +99,6 @@ public class Customer implements Observer, DisplayElement{
 				toolTimeMap.put(t,i);
 			}
 		}
-
-		rent();
 		
 	}
 

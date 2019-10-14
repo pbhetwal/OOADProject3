@@ -114,10 +114,10 @@ class HardwareStore implements Observer, DisplayElement{
 	public String chooseOption(){
 		double rand;
 		rand = (Math.random()*((3 - 1) + 1)) + 1;
-		if (rand == 1){
+		if ((int)rand == 1){
 			return "cord";
 		}
-		else if(rand == 2){
+		else if((int)rand == 2){
 			return "kit";
 		}
 		else{
@@ -140,11 +140,11 @@ class HardwareStore implements Observer, DisplayElement{
 					price += extensionCord;
 				}
 				else if(op == "kit"){
-					System.out.println(" Adding option accessory kit to their shopping cart");
+					System.out.println(" Adding option accessory kit to their shopping cart before check out");
 					price += accessoryKit;
 				}
 				else{
-					System.out.println(" Adding option protective gear to their shopping cart");
+					System.out.println(" Adding option protective gear to their shopping cart before check out");
 					price += protectiveGear;
 				}
 				num --;
@@ -185,7 +185,6 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 
 	public void update(){
-
 		allActiveRentals();
 		allToolsLeft();
 		setTotalPrice(0);

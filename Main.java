@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Main {
     @SuppressWarnings("unchecked")
@@ -116,8 +117,15 @@ public class Main {
         for(Customer c: customers){
             cal.registerObserver(c);
         }
-        for(int i = 0; i < 34; i++){
+        Random r = new Random();
+        for(int i = 0; i < 2; i++){
+            int numCust = r.nextInt(customers.size() + 1);
+            System.out.println("Number of cutomers = " + numCust);
             cal.startDay();
+            for(int j = 0; j < numCust; j++){
+                Customer temp = (Customer)customers.get(r.nextInt(customers.size()));
+                temp.rent();
+            }
             //store.allActiveRentals();
             //store.allToolsLeft();
             cal.endDay();

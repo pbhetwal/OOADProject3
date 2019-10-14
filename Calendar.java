@@ -29,8 +29,10 @@ public class Calendar<T extends Observer> implements Subject<T> {
 
     public void startDay() {
         System.out.println("Day " + Integer.toString(day) + " is starting!");
-        Customer tmp = (Customer)observers.get(1);
-        tmp.returnTool();
+        for(int i = 1; i < observers.size(); i++){
+            Customer tmp = (Customer)observers.get(i);
+            tmp.returnTool();
+        }
         notifyObserver();
     }
 
