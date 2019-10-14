@@ -40,12 +40,16 @@ public class Customer implements Observer, DisplayElement{
 			Map.Entry e = (Map.Entry)it.next();
 			if ((int)e.getValue() == 0){
 				Tools t = (Tools)e.getKey();
-				System.out.println("Customer " + getName() + " is returning tool: " + t.getName());
-				int i = (int)e.getValue();
-				toolTimeMap.put(t,i);
-				store.setHashMap(t,null);
+				if(temp.get(t) == this){
+					System.out.println("Customer " + getName() + " is returning tool: " + t.getName());
+					int i = (int)e.getValue();
+					toolTimeMap.put(t,i);
+					store.setHashMap(t,null);
+				}
 			}
 		}
+		
+		
 		
 	}
 
