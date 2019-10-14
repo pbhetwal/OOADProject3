@@ -6,7 +6,7 @@ import java.util.Random;
 public class Main {
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
-        int numDays = 5;
+        int numDays = 35;
         HardwareStore store = HardwareStore.getInstance();
         List<Customer> customers = new LinkedList<Customer>();
         Tools Brush = new PaintingTool("Brush");
@@ -121,7 +121,6 @@ public class Main {
         Random r = new Random();
         for(int i = 0; i < numDays; i++){
             int numCust = r.nextInt(customers.size() + 1);
-            System.out.println("Number of cutomers = " + numCust);
             cal.startDay();
             for(int j = 0; j < numCust; j++){
                 Customer temp = (Customer)customers.get(r.nextInt(customers.size()));
