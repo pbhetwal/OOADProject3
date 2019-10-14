@@ -88,6 +88,13 @@ public class Customer implements Observer, DisplayElement{
 		return num;
 	}
 
+	public void setNumToolsRented(int num){
+		numToolsRented = numToolsRented + num;
+	}	
+
+	public int getNumToolsRented(){
+		return this.numToolsRented;
+	}
 
 	public void update(){
 		Iterator it = toolTimeMap.entrySet().iterator();
@@ -128,6 +135,8 @@ public class Customer implements Observer, DisplayElement{
 		setDaysLeft(cb.calcDays());
 		HashMap<Tools, Customer> temp = store.getMap();
 		Iterator it = temp.entrySet().iterator();
+		int n = getNumToolsRented();
+		if(n < numTools){
 		while(numTools != 0 && it.hasNext()){
 			Map.Entry elem = (Map.Entry)it.next();
 			if(elem.getValue() == null){
@@ -139,9 +148,10 @@ public class Customer implements Observer, DisplayElement{
 				System.out.println("They are renting the tool for " + daysLeft + " day(s)");
 				checkOut();
 				numTools--;
-				numToolsRented++;
+				setNumToolsRented(1);
 			}
 			//System.out.println((Tools)elem.getKey().getName());
+		}
 		}
 	}
 
