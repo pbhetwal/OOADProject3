@@ -20,6 +20,7 @@ class HardwareStore implements Observer, DisplayElement{
 	private int casualRentAmt;
 	private int regularRentAmt;
 	private int totalSimulationMoney = 0;
+	private int updateDayCount = 1;
 
 	private HardwareStore() {
 		System.out.println("Our hardware rental store is now open!");
@@ -38,6 +39,12 @@ class HardwareStore implements Observer, DisplayElement{
 		return this.totalSimulationMoney;
 	}
 
+	public void setUpdateDayCount(){
+		updateDayCount++;
+	}
+	public int getUpdateDayCount(){
+		return this.updateDayCount;
+	}
 	public void newCust(Customer c){
 		priceMap.put(c.getName(), 0);
 	}
@@ -91,6 +98,11 @@ class HardwareStore implements Observer, DisplayElement{
 	public void printDayEarnings(){
 		int p = getTotalPrice();
 		System.out.println("The Store made "+ p +" dollars today");
+		int count = getUpdateDayCount();
+		if(count == 36){
+			int total = getTotalSimMoney();
+			System.out.println("The Store made "+ total +" dollars over the course of 35 days");
+		}
 	}
 	public void calcPrice(Tools t, Customer c){
 		int price = priceMap.get(c.getName());
@@ -201,6 +213,7 @@ class HardwareStore implements Observer, DisplayElement{
 		allActiveRentals();
 		allToolsLeft();
 		setTotalPrice(0,"end");
+		setUpdateDayCount();
 	}
 
 	public void announce(){
