@@ -156,10 +156,23 @@ public class Customer implements Observer, DisplayElement{
 					checkOut();
 					numTools--;
 					setNumToolsRented(1);
+					store.setTotalSimRentals();
+					
+					String custClassName = getClassName();
+					if(custClassName == "class BusinessCustomer"){
+						store.setBusCustToolTotal();
+					}
+					else if(custClassName == "class CasualCustomer"){
+						store.setCasCustToolTotal();
+					}
+					else{
+						store.setRegCustToolTotal();
+					}
 				}
 				//System.out.println((Tools)elem.getKey().getName());
 			}
 		}
+
 	}
 
 }

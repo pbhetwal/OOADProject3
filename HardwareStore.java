@@ -21,6 +21,10 @@ class HardwareStore implements Observer, DisplayElement{
 	private int regularRentAmt;
 	private int totalSimulationMoney = 0;
 	private int updateDayCount = 1;
+	private int totalSimRentals = 0;
+	private int busCustToolTotal = 0;
+	private int regCustToolTotal = 0;
+	private int casCustToolTotal = 0;
 
 	private HardwareStore() {
 		System.out.println("Our hardware rental store is now open!");
@@ -31,12 +35,44 @@ class HardwareStore implements Observer, DisplayElement{
 		return ins; 
 	}
 
+	public void setBusCustToolTotal(){
+		busCustToolTotal++;
+	}
+
+	public int getBusCustToolTotal(){
+		return this.busCustToolTotal;
+	}
+
+	public void setRegCustToolTotal(){
+		regCustToolTotal++;
+	}
+
+	public int getRegCustToolTotal(){
+		return this.regCustToolTotal;
+	}
+
+	public void setCasCustToolTotal(){
+		casCustToolTotal++;
+	}
+
+	public int getCasCustToolTotal(){
+		return this.casCustToolTotal;
+	}
+
 	public void setTotalSimMoney(int sim){
 		totalSimulationMoney = totalSimulationMoney + sim;
 	}
 
 	public int getTotalSimMoney(){
 		return this.totalSimulationMoney;
+	}
+
+	public void setTotalSimRentals(){
+		totalSimRentals = totalSimRentals + 1;
+	}
+
+	public int getTotalSimRentals(){
+		return this.totalSimRentals;
 	}
 
 	public void setUpdateDayCount(){
@@ -101,7 +137,15 @@ class HardwareStore implements Observer, DisplayElement{
 		int count = getUpdateDayCount();
 		if(count == 36){
 			int total = getTotalSimMoney();
+			int transaction = getTotalSimRentals();
+			int bus = getBusCustToolTotal();
+			int cas = getCasCustToolTotal();
+			int reg = getRegCustToolTotal();
 			System.out.println("The Store made "+ total +" dollars over the course of 35 days");
+			System.out.println("The Store issued "+ transaction +" total rentals over the course of 35 days");
+			System.out.println("The Store rented to  "+ bus +" business customers total over the course of 35 days");
+			System.out.println("The Store rented to  "+ cas +" casual customers total over the course of 35 days");
+			System.out.println("The Store rented to  "+ reg +" regular customers total over the course of 35 days");
 		}
 	}
 	public void calcPrice(Tools t, Customer c){
