@@ -28,6 +28,7 @@ public class Customer implements Observer, DisplayElement{
 		store = s;
     }
 
+
 	public void setCustomerBehavior(CustomerBehavior cb){
 		this.cb = cb;
 	}
@@ -158,11 +159,13 @@ public class Customer implements Observer, DisplayElement{
 					setNumToolsRented(1);
 					store.setTotalSimRentals();
 					
-					String custClassName = getClassName();
-					if(custClassName == "class BusinessCustomer"){
+					
+					Character custClassName = getName().charAt(0);
+					System.out.println("CLASSNAME:"+custClassName);
+					if(custClassName == 'B'){
 						store.setBusCustToolTotal();
 					}
-					else if(custClassName == "class CasualCustomer"){
+					else if(custClassName == 'C'){
 						store.setCasCustToolTotal();
 					}
 					else{

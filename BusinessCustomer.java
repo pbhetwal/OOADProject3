@@ -15,6 +15,7 @@ public class BusinessCustomer extends Customer{
 	}
 
 
+
 	public int rentTools() {
 		return 0;
 	}
@@ -28,4 +29,6 @@ public class BusinessCustomer extends Customer{
 		int num = store.getBusinessRentAmt();
 		cb.setMaxAmt(num);
 	}
+	
+
 }
