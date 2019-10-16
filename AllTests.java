@@ -53,7 +53,6 @@ public class AllTests{
 
 		assertNull(map.get(Brush));
 		map.clear();
-		store = null;
 
 	}
 	// Test 5: Test to ensure hash map has value customer for tool with customer 
