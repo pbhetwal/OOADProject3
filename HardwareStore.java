@@ -193,6 +193,16 @@ class HardwareStore implements Observer, DisplayElement{
 			String toolName = tool.getName();
 			s.append("Customer "+ custName + " rented the tool "+ toolName);
 			//System.out.println("Customer "+ custName + " is adding tool "+ toolName +" to their shopping cart");
+			String custClassName = Customer.class.getName();
+			if(custClassName == "BusinessCustomer"){
+						setBusCustToolTotal();
+					}
+					else if(custClassName == "CasualCustomer"){
+						setCasCustToolTotal();
+					}
+					else{
+						setRegCustToolTotal();
+					}
 		}
 	}
 
