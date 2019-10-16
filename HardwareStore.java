@@ -27,6 +27,7 @@ class HardwareStore implements Observer, DisplayElement{
 	private int regCustToolTotal = 0;
 	private int casCustToolTotal = 0;
 	private StoreRecord record;
+	private int custRentDays;
 
 	private HardwareStore() {
 		System.out.println("Our hardware rental store is now open!");
@@ -35,6 +36,15 @@ class HardwareStore implements Observer, DisplayElement{
 
 	public static HardwareStore getInstance(){
 		return ins; 
+	}
+
+
+	public void setCustRentDays(int days){
+		custRentDays = days;
+	}
+
+	public int getCustRentDays(){
+		return this.custRentDays;
 	}
 
 	public void setBusCustToolTotal(){
@@ -152,7 +162,7 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 	public void calcPrice(Tools t, Customer c){
 		int price = priceMap.get(c.getName());
-		price += t.getPrice();
+		price += (t.getPrice() * getCustRentDays());
 		priceMap.put(c.getName(), price);
 	}
 
