@@ -106,6 +106,7 @@ public class Main {
         customers.add(Rachel);
         customers.add(Rebecca);
         Calendar cal = Calendar.getInstance();
+        /*
         store.newCust(Carl);
         store.newCust(Conner);
         store.newCust(Carrie);
@@ -118,8 +119,10 @@ public class Main {
         store.newCust(Ralph);
         store.newCust(Rachel);
         store.newCust(Rebecca);
+        */
         cal.registerObserver(store);
         for(Customer c: customers){
+            store.newCust(c);
             cal.registerObserver(c);
         }
         Random r = new Random();
