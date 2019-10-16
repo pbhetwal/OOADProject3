@@ -53,6 +53,7 @@ public class AllTests{
 
 		assertNull(map.get(Brush));
 		map.clear();
+		store = null;
 
 	}
 	// Test 5: Test to ensure hash map has value customer for tool with customer 
@@ -104,8 +105,12 @@ public class AllTests{
 		HashMap<Tools, Customer> map = store.getMap();
 
 		store.allActiveRentals(); 
-	
-		assertEquals("Active Rentals are as follows: \nCarl is currently renting Brush\n", out.toString());
+
+		String expected = "\nNumber of Active Rentals: " + 1 
+						+ "\nActive Rentals are as follows: " 
+						+ "\nCarl is currently renting Brush\n"; 
+
+		assertEquals(expected, out.toString());
 
 		map.clear();
 	}
@@ -124,9 +129,12 @@ public class AllTests{
 		store.setHashMap(Brush, Carl);
 		HashMap<Tools, Customer> map = store.getMap();
 
+		store.setToolsRented(1);
 		store.allToolsLeft();
 
-		assertEquals("Tools left in the store are as follows: \n", out.toString());
+		String expected = "\nNumber of Tools left in the store: " + 23 
+			            + "\nTools left in the store are as follows: \n";
+		assertEquals(expected, out.toString());
 
 		map.clear();	
 	}
