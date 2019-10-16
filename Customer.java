@@ -183,9 +183,11 @@ public class Customer implements Observer, DisplayElement{
 					}
 				}
 				//System.out.println((Tools)elem.getKey().getName());
+				//store.addRecord(totalRental);
 			}
-			System.out.println("Customer " + name + " is checking out with a total " + totalRental);
+			rentalRecord.append(" Their total at checkout was: " + totalRental);
 			store.addRecord(rentalRecord);
+			System.out.println("Customer " + name + " is checking out with a total " + totalRental);
 		}
 	}
 

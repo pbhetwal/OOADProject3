@@ -12,8 +12,7 @@ public class StoreRecord {
         storeRecord.add(dayRecord);
     }
 
-    public void printRecord(){
-        int orderCount = storeRecord.size();
+    public void printRecord(int orderCount){
         System.out.println("The total number of completed orders is " + orderCount);
         System.out.println("The list of completed orders is:");
         for(StringBuilder r: storeRecord){
