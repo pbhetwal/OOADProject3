@@ -14,9 +14,6 @@ class HardwareStore implements Observer, DisplayElement{
 	private int accessoryKit = 25;
 	private int protectiveGear = 30;
 	private int toolsRented = 0;
-	private boolean allowBusinessCustomer = true;
-	private boolean allowRegularCustomer = true;
-	private boolean allowCasualCustomer = true;
 	private int businessRentAmt;
 	private int casualRentAmt;
 	private int regularRentAmt;
@@ -192,7 +189,7 @@ class HardwareStore implements Observer, DisplayElement{
 			String custName = customer.getName();
 			String toolName = tool.getName();
 			s.append("Customer "+ custName + " rented the tool "+ toolName);
-			//System.out.println("Customer "+ custName + " is adding tool "+ toolName +" to their shopping cart");
+			System.out.println("Customer "+ custName + " is adding tool "+ toolName +" to their shopping cart");
 			String custClassName = customer.getCustClass();
 			
 			if(custClassName == "BusinessCustomer"){
@@ -256,29 +253,22 @@ class HardwareStore implements Observer, DisplayElement{
 
 	public void checkAvailable(){
 		if(24 - toolsRented < 3){
-			allowBusinessCustomer = false;
 			businessRentAmt = 0;
 			casualRentAmt = 2;
 			regularRentAmt = 2;
 
 		}
 		else if(24 - toolsRented == 0){
-			allowBusinessCustomer = false;
-			allowCasualCustomer = false;
-			allowRegularCustomer = false;
+			businessRentAmt = 0;
+			casualRentAmt = 0;
+			regularRentAmt = 0;
 		}
 		else if(24 - toolsRented == 1){
-			allowBusinessCustomer = false;
-			allowCasualCustomer = true;
-			allowRegularCustomer = true;
 			businessRentAmt = 0;
 			casualRentAmt = 1;
 			regularRentAmt = 1;
 		}
 		else{
-			allowBusinessCustomer = true;
-			allowCasualCustomer = true;
-			allowRegularCustomer = true;
 			businessRentAmt = 3;
 			casualRentAmt = 2;
 			regularRentAmt = 3;
@@ -286,7 +276,6 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 
 	public void update(){
-		//record.printRecord(0);
 		allActiveRentals();
 		allToolsLeft();
 		setTotalPrice(0,"end");
@@ -294,7 +283,6 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 
 	public void announce(){
-		printDayEarnings();
 		return;
 	}
 
