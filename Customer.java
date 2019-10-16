@@ -69,6 +69,9 @@ public class Customer implements Observer, DisplayElement{
 					toolTimeMap.put(t,i);
 					store.setHashMap(t,null);
 					setNumToolsRented(-1);
+					int n = store.getToolsRented();
+					n--;
+					store.setToolsRented(n);
 					checkReturns(t.getName(), getName(), false);
 					store.incrementTotalComplete();
 				}
