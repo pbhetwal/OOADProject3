@@ -176,14 +176,7 @@ class HardwareStore implements Observer, DisplayElement{
 		priceMap.put(c.getName(), price);
 	}
 
-	public void returnTools(Customer customer, Tools tool){
-		if(hmap.get(tool) == customer){
-			hmap.remove(tool);
-		}
-		else{
-			System.out.println("No known tool for given customer");
-		}
-	}
+	
 
 	public void addToolToHashMap(Tools tool){
 		hmap.put(tool, null);
