@@ -45,8 +45,8 @@ public class Calendar<T extends Observer> implements Subject<T> {
         }
 
         HardwareStore tmp = HardwareStore.getInstance();
-        tmp.allActiveRentals();
-        tmp.allToolsLeft();
+        //tmp.allActiveRentals();
+        //tmp.allToolsLeft();
         tmp.printDayEarnings();
         day++;
 

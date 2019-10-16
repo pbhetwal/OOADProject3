@@ -281,8 +281,8 @@ class HardwareStore implements Observer, DisplayElement{
 
 	public void update(){
 		//record.printRecord(0);
-		//allActiveRentals();
-		//allToolsLeft();
+		allActiveRentals();
+		allToolsLeft();
 		setTotalPrice(0,"end");
 		setUpdateDayCount();
 	}
