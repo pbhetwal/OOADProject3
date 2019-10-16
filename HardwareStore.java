@@ -165,9 +165,9 @@ class HardwareStore implements Observer, DisplayElement{
 			int reg = getRegCustToolTotal();
 			System.out.println("The Store made "+ total +" dollars over the course of 35 days");
 			System.out.println("The Store issued "+ transaction +" total rentals over the course of 35 days");
-			System.out.println("The Store rented to  "+ bus +" business customers total over the course of 35 days");
-			System.out.println("The Store rented to  "+ cas +" casual customers total over the course of 35 days");
-			System.out.println("The Store rented to  "+ reg +" regular customers total over the course of 35 days");
+			System.out.println("The Store rented "+ bus +" tools  total to business customers over the course of 35 days");
+			System.out.println("The Store rented "+ cas +" tools total to casual customers over the course of 35 days");
+			System.out.println("The Store rented "+ reg +" tools total to regular customers over the course of 35 days");
 		}
 	}
 	public void calcPrice(Tools t, Customer c){
@@ -193,7 +193,8 @@ class HardwareStore implements Observer, DisplayElement{
 			String toolName = tool.getName();
 			s.append("Customer "+ custName + " rented the tool "+ toolName);
 			//System.out.println("Customer "+ custName + " is adding tool "+ toolName +" to their shopping cart");
-			String custClassName = Customer.class.getName();
+			String custClassName = customer.getCustClass();
+			
 			if(custClassName == "BusinessCustomer"){
 						setBusCustToolTotal();
 					}
