@@ -3,6 +3,10 @@
 //  OOAD Project 3
 //
 public class RegularCustomerBehavior implements CustomerBehavior{
+	/*
+	:Description:	Strategy pattern used here - implement specific behavior for
+					regular customer
+	*/
 	private int randToolNum, randNumDays;
 	private int maxAmt;
 
