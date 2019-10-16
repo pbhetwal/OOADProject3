@@ -3,6 +3,9 @@ import java.util.LinkedList;
 import java.lang.StringBuilder;
 
 public class StoreRecord {
+    /*
+	:Description:	Class to store record of rentals as they are completed
+	*/
     private List<StringBuilder> storeRecord;
     public StoreRecord(){
         storeRecord = new LinkedList<StringBuilder>();
