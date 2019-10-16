@@ -3,6 +3,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
+import java.lang.StringBuilder;
 
 class HardwareStore implements Observer, DisplayElement{
 	private static HardwareStore ins = new HardwareStore();
@@ -25,10 +26,11 @@ class HardwareStore implements Observer, DisplayElement{
 	private int busCustToolTotal = 0;
 	private int regCustToolTotal = 0;
 	private int casCustToolTotal = 0;
+	private StoreRecord record;
 
 	private HardwareStore() {
 		System.out.println("Our hardware rental store is now open!");
-
+		record = new StoreRecord();
 	}
 
 	public static HardwareStore getInstance(){
@@ -167,7 +169,7 @@ class HardwareStore implements Observer, DisplayElement{
 		hmap.put(tool, null);
 	}
 
-	public void addCustomerToHashMap(Customer customer, Tools tool){
+	public void addCustomerToHashMap(Customer customer, Tools tool, StringBuilder s){
 		if(hmap.get(tool) != null){
 			System.out.println("Tool already rented by a customer");
 		}
@@ -176,6 +178,7 @@ class HardwareStore implements Observer, DisplayElement{
 			calcPrice(tool, customer);
 			String custName = customer.getName();
 			String toolName = tool.getName();
+			s.append("Customer "+ custName + " rented the tool "+ toolName);
 			System.out.println("Customer "+ custName + " is adding tool "+ toolName +" to their shopping cart");
 		}
 	}
@@ -194,10 +197,11 @@ class HardwareStore implements Observer, DisplayElement{
 		}
 	}
 
-	public int additonalOptions(){
+	public int additonalOptions(StringBuilder additions){
 		int price = 0;
 		int num = (int)(Math.random()*((6 - 0) + 1)) + 0;
 		if(num == 0){
+			//additions.append('\n');
 			return 0;
 		}
 		else{
@@ -205,17 +209,21 @@ class HardwareStore implements Observer, DisplayElement{
 				String op;
 				op = chooseOption();
 				if(op == "cord"){
+					additions.append(" They added option extension cord\n");
 					System.out.println(" Adding option extension cord to their shopping cart before check out");
 					price += extensionCord;
 				}
 				else if(op == "kit"){
+					additions.append(" They added option accessory kit\n");
 					System.out.println(" Adding option accessory kit to their shopping cart before check out");
 					price += accessoryKit;
 				}
 				else{
+					additions.append(" They added option protective gear\n");
 					System.out.println(" Adding option protective gear to their shopping cart before check out");
 					price += protectiveGear;
 				}
+
 				num --;
 			}
 		}
@@ -254,6 +262,7 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 
 	public void update(){
+		record.printRecord();
 		allActiveRentals();
 		allToolsLeft();
 		setTotalPrice(0,"end");
@@ -298,6 +307,10 @@ class HardwareStore implements Observer, DisplayElement{
 
 	public int getRegularRentAmt(){
 		return regularRentAmt;
+	}
+
+	public void addRecord(StringBuilder rec){
+		record.addRecord(rec);
 	}
 
 }

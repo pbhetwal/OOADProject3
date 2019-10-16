@@ -91,29 +91,6 @@ public class Main {
         store.newCust(Ralph);
         store.newCust(Rachel);
         store.newCust(Rebecca);
-        store.addToolToHashMap(Brush);
-        store.addToolToHashMap(Canvas);
-        store.addToolToHashMap(PaintPan);
-        store.addToolToHashMap(Tape);
-        store.addToolToHashMap(Tarp);
-        store.addToolToHashMap(Pipe);
-        store.addToolToHashMap(Hose);
-        store.addToolToHashMap(Faucet);
-        store.addToolToHashMap(Joint);
-        store.addToolToHashMap(Sealant);
-        store.addToolToHashMap(Pitchfork);
-        store.addToolToHashMap(Gloves);
-        store.addToolToHashMap(Wheelbarrow);
-        store.addToolToHashMap(Pruners);
-        store.addToolToHashMap(Mowers);
-        store.addToolToHashMap(Weedeater);
-        store.addToolToHashMap(Shovel);
-        store.addToolToHashMap(Mixer);
-        store.addToolToHashMap(BagOfMix);
-        store.addToolToHashMap(Axe);
-        store.addToolToHashMap(Saw);
-        store.addToolToHashMap(Woodfile);
-        store.addToolToHashMap(Sawhorse);
         cal.registerObserver(store);
         for(Customer c: customers){
             cal.registerObserver(c);
@@ -121,7 +98,6 @@ public class Main {
         Random r = new Random();
         for(int i = 0; i < numDays; i++){
             int numCust = r.nextInt(customers.size() + 1);
-            System.out.println("Customers: " + numCust);
             cal.startDay();
             for(int j = 0; j < numCust; j++){
                 Customer temp = (Customer)customers.get(r.nextInt(customers.size()));

@@ -6,7 +6,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
-
+import java.lang.StringBuilder;
 
 public class Customer implements Observer, DisplayElement{
 	private String name, className;
@@ -14,8 +14,8 @@ public class Customer implements Observer, DisplayElement{
 	protected CustomerBehavior cb;
 	protected HardwareStore store;
 	private int numToolsRented = 0;
+	private int totalRental;
 	private HashMap<Tools, Integer> toolTimeMap = new HashMap<Tools, Integer>();
-
 	public Customer(){
 
 	}
@@ -103,6 +103,7 @@ public class Customer implements Observer, DisplayElement{
 	}
 
 	public void update(){
+		totalRental = 0;
 		Iterator it = toolTimeMap.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry e = (Map.Entry)it.next();
@@ -124,19 +125,27 @@ public class Customer implements Observer, DisplayElement{
 
 	}
 
-	public void checkOut(){
-		int custPrice = store.additonalOptions();
+	public StringBuilder checkOut(){
+		StringBuilder additions = new StringBuilder();
+		int custPrice = store.additonalOptions(additions);
 		HashMap<String, Integer> priceMap = store.getPriceMap();
 		custPrice += priceMap.get(getName());
+		totalRental += custPrice;
 		store.setTotalPrice(custPrice,"");
 		store.setTotalSimMoney(custPrice);
 		String custName = getName();
 		store.setPriceMap(custName, custPrice);
-		System.out.println("Customer "+ custName + " is checking out and paying "+ custPrice);
+		//System.out.println("Customer "+ custName + " is checking out and paying "+ custPrice);
 		store.setPriceMap(custName,0);
+		//System.out.println("additions = "+ additions);
+		return additions;
 	}
 
 	public void rent(){
+		if(cb.getMaxAmt() > store.getToolsRented()){
+			return;
+		}
+		StringBuilder rentalRecord = new StringBuilder();
 		store.checkAvailable();
 		changeAmount();
 		int numTools = cb.rentTools();
@@ -148,20 +157,21 @@ public class Customer implements Observer, DisplayElement{
 			while(numTools != 0 && it.hasNext()){
 				Map.Entry elem = (Map.Entry)it.next();
 				if(elem.getValue() == null){
-					store.addCustomerToHashMap(this, (Tools)elem.getKey());
+					store.addCustomerToHashMap(this, (Tools)elem.getKey(), rentalRecord);
 					toolTimeMap.put((Tools)elem.getKey(), daysLeft);
 					int z = store.getToolsRented();
 					z++;
 					store.setToolsRented(z);
 					System.out.println("They are renting the tool for " + daysLeft + " day(s)");
-					checkOut();
+					rentalRecord.append(", they rented it for " + daysLeft + " day(s)\n");
+					rentalRecord.append(checkOut());
 					numTools--;
 					setNumToolsRented(1);
 					store.setTotalSimRentals();
 					
 					
 					Character custClassName = getName().charAt(0);
-					System.out.println("CLASSNAME:"+custClassName);
+					//System.out.println("CLASSNAME:"+custClassName);
 					if(custClassName == 'B'){
 						store.setBusCustToolTotal();
 					}
@@ -174,8 +184,9 @@ public class Customer implements Observer, DisplayElement{
 				}
 				//System.out.println((Tools)elem.getKey().getName());
 			}
+			System.out.println("Customer " + name + " is checking out with a total " + totalRental);
+			store.addRecord(rentalRecord);
 		}
-
 	}
 
 }
