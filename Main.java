@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.List;
 import java.util.LinkedList;
-import java.util.Random;
 
 public class Main {
     @SuppressWarnings("unchecked")
@@ -125,6 +124,8 @@ public class Main {
             store.newCust(c);
             cal.registerObserver(c);
         }
+        cal.simulateDays();
+        /*
         Random r = new Random();
         for(int i = 0; i < numDays; i++){
             int numCust = r.nextInt(customers.size() + 1);
@@ -137,5 +138,6 @@ public class Main {
             //store.allToolsLeft();
             cal.endDay();
         }
+        */
     }
 }

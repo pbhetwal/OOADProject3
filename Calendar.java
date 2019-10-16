@@ -1,19 +1,29 @@
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Calendar<T extends Observer> implements Subject<T> {
     private static Calendar ins = new Calendar();
     private List<T> observers;
-    private int day; 
+    private List<Customer> customers;
+    private int day;
+    private Random r;
+    private int numDays;
     private Calendar() {
         day = 1;
         observers = new LinkedList<T>();
+        customers = new LinkedList<Customer>();
+        r = new Random();
+        numDays = 35;
     }
     public static Calendar getInstance(){
         return ins; 
     }
     public void registerObserver(T observer){
         observers.add(observer);
+        if(observer instanceof Customer){
+            customers.add((Customer)observer);
+        }
     }
     public void removeObserver(){
         for(T obs: observers){
@@ -39,7 +49,7 @@ public class Calendar<T extends Observer> implements Subject<T> {
     public void endDay() {
         int index = observers.size()-1;
         for(int i = 0; i < index+1; i++){
-            if(i == index){
+            if(i == index || i == 0){
                 observers.get(i).announce();
             }
         }
@@ -50,5 +60,19 @@ public class Calendar<T extends Observer> implements Subject<T> {
         tmp.printDayEarnings();
         day++;
 
+    }
+
+    public void simulateDays(){
+        for(int i = 0; i < numDays; i++){
+            int numCust = r.nextInt(customers.size() + 1);
+            startDay();
+            for(int j = 0; j < numCust; j++){
+                Customer temp = (Customer)customers.get(r.nextInt(customers.size()));
+                temp.rent();
+            }
+            //store.allActiveRentals();
+            //store.allToolsLeft();
+            endDay();
+        }
     }
 }

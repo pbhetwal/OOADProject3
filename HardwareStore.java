@@ -288,6 +288,7 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 
 	public void announce(){
+		printDayEarnings();
 		return;
 	}
 
