@@ -150,6 +150,7 @@ public class Customer implements Observer, DisplayElement{
 		changeAmount();
 		int numTools = cb.rentTools();
 		setDaysLeft(cb.calcDays());
+		store.setCustRentDays(daysLeft);
 		HashMap<Tools, Customer> temp = store.getMap();
 		Iterator it = temp.entrySet().iterator();
 		int n = getNumToolsRented();
