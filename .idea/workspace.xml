@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5b36de0-dbbf-41d3-824f-7204bebcca9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HardwareStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/HardwareStore.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/HardwareStore.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
+              <caret line="334" lean-forward="true" selection-start-line="334" selection-end-line="334" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1222#1223#0" expanded="true" />
@@ -72,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="197" selection-start-line="197" selection-end-line="197" />
+            <state relative-caret-position="240">
+              <caret line="196" column="47" selection-start-line="196" selection-start-column="47" selection-end-line="196" selection-end-column="47" />
               <folding>
                 <element signature="e#0#2653#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -268,7 +268,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571257537684" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571257855441" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -660,7 +660,7 @@
     <entry file="file://$PROJECT_DIR$/HardwareStore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
+          <caret line="334" lean-forward="true" selection-start-line="334" selection-end-line="334" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1222#1223#0" expanded="true" />
@@ -720,8 +720,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="197" selection-start-line="197" selection-end-line="197" />
+        <state relative-caret-position="240">
+          <caret line="196" column="47" selection-start-line="196" selection-start-column="47" selection-end-line="196" selection-end-column="47" />
           <folding>
             <element signature="e#0#2653#0" expanded="true" />
             <element signature="imports" expanded="true" />
