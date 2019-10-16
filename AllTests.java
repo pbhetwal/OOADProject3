@@ -6,8 +6,11 @@ import java.util.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-// All our tests
 public class AllTests{
+	/*
+	:Description:	This class has the tests that we created 
+					for this program.  
+	*/
 
 	// Test 1: Test to ensure singleton is behaving properly 
 	@Test
