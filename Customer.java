@@ -195,7 +195,7 @@ public class Customer implements Observer, DisplayElement{
 					numTools--;
 					setNumToolsRented(1);
 					store.setTotalSimRentals();
-					
+
 					Character custClassName = getName().charAt(0);
 					//System.out.println("CLASSNAME:"+custClassName);
 					if(custClassName == 'B'){
