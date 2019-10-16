@@ -14,6 +14,7 @@ public class Main {
         toolCreator.createTool("Painting", "PaintPan");
         toolCreator.createTool("Painting", "Tape");
         toolCreator.createTool("Painting", "Tarp");
+        toolCreator.createTool("Painting", "Roller");
         toolCreator.createTool("Plumbing", "Pipe");
         toolCreator.createTool("Plumbing", "Hose");
         toolCreator.createTool("Plumbing", "Faucet");
