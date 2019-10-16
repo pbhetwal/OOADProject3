@@ -108,6 +108,7 @@ class HardwareStore implements Observer, DisplayElement{
 	public void allActiveRentals(){
 
 		Iterator it = hmap.entrySet().iterator();
+		System.out.println("\nNumber of Active Rentals: " + toolsRented);
 		System.out.println("Active Rentals are as follows: ");
 		while(it.hasNext()){
 			Map.Entry elem = (Map.Entry)it.next();
@@ -125,6 +126,7 @@ class HardwareStore implements Observer, DisplayElement{
 	public void allToolsLeft(){
 
 		Iterator it = hmap.entrySet().iterator();
+		System.out.println("\nNumber of Tools left in the store: " + (24-toolsRented));
 		System.out.println("Tools left in the store are as follows: ");
 		while(it.hasNext()){
 			Map.Entry elem = (Map.Entry)it.next();
