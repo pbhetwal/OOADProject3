@@ -179,7 +179,7 @@ class HardwareStore implements Observer, DisplayElement{
 			String custName = customer.getName();
 			String toolName = tool.getName();
 			s.append("Customer "+ custName + " rented the tool "+ toolName);
-			System.out.println("Customer "+ custName + " is adding tool "+ toolName +" to their shopping cart");
+			//System.out.println("Customer "+ custName + " is adding tool "+ toolName +" to their shopping cart");
 		}
 	}
 
@@ -210,17 +210,17 @@ class HardwareStore implements Observer, DisplayElement{
 				op = chooseOption();
 				if(op == "cord"){
 					additions.append(" They added option extension cord\n");
-					System.out.println(" Adding option extension cord to their shopping cart before check out");
+					//System.out.println(" Adding option extension cord to their shopping cart before check out");
 					price += extensionCord;
 				}
 				else if(op == "kit"){
 					additions.append(" They added option accessory kit\n");
-					System.out.println(" Adding option accessory kit to their shopping cart before check out");
+					//System.out.println(" Adding option accessory kit to their shopping cart before check out");
 					price += accessoryKit;
 				}
 				else{
 					additions.append(" They added option protective gear\n");
-					System.out.println(" Adding option protective gear to their shopping cart before check out");
+					//System.out.println(" Adding option protective gear to their shopping cart before check out");
 					price += protectiveGear;
 				}
 
@@ -263,8 +263,8 @@ class HardwareStore implements Observer, DisplayElement{
 
 	public void update(){
 		record.printRecord(getTotalSimRentals());
-		allActiveRentals();
-		allToolsLeft();
+		//allActiveRentals();
+		//allToolsLeft();
 		setTotalPrice(0,"end");
 		setUpdateDayCount();
 	}

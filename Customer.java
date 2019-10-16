@@ -162,7 +162,7 @@ public class Customer implements Observer, DisplayElement{
 					int z = store.getToolsRented();
 					z++;
 					store.setToolsRented(z);
-					System.out.println("They are renting the tool for " + daysLeft + " day(s)");
+					//System.out.println("They are renting the tool for " + daysLeft + " day(s)");
 					rentalRecord.append(", they rented it for " + daysLeft + " day(s)\n");
 					rentalRecord.append(checkOut());
 					numTools--;
@@ -185,9 +185,11 @@ public class Customer implements Observer, DisplayElement{
 				//System.out.println((Tools)elem.getKey().getName());
 				//store.addRecord(totalRental);
 			}
-			rentalRecord.append(" Their total at checkout was: " + totalRental);
+			if(totalRental != 0){
+				rentalRecord.append(" Their total at checkout was: " + totalRental);
+			}
 			store.addRecord(rentalRecord);
-			System.out.println("Customer " + name + " is checking out with a total " + totalRental);
+			//System.out.println("Customer " + name + " is checking out with a total " + totalRental);
 		}
 	}
 

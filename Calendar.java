@@ -38,6 +38,8 @@ public class Calendar<T extends Observer> implements Subject<T> {
 
     public void endDay() {
         HardwareStore tmp = HardwareStore.getInstance();
+        tmp.allActiveRentals();
+        tmp.allToolsLeft();
         tmp.printDayEarnings();
         day++;
 
