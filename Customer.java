@@ -46,7 +46,6 @@ public class Customer implements Observer, DisplayElement{
 			if (temp.contains(toolName) && temp.contains(custName)) {
 				store.addRecord(s);
 				records.remove(s);
-				store.incrementTotalComplete();
 				//store.completeRental();
 				return;
 			}
@@ -71,6 +70,7 @@ public class Customer implements Observer, DisplayElement{
 					store.setHashMap(t,null);
 					setNumToolsRented(-1);
 					checkReturns(t.getName(), getName(), false);
+					store.incrementTotalComplete();
 				}
 			}
 		}
