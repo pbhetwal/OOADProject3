@@ -1,5 +1,7 @@
 public abstract class Tools {
-
+    /*
+    :Description:   Abstract class - concrete tools inherit from here. 
+    */
     public String getName() {
         return name_;
     }
