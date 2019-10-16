@@ -37,6 +37,13 @@ public class Calendar<T extends Observer> implements Subject<T> {
     }
 
     public void endDay() {
+        int index = observers.size()-1;
+        for(int i = 0; i < index+1; i++){
+            if(i == index){
+                observers.get(i).announce();
+            }
+        }
+
         HardwareStore tmp = HardwareStore.getInstance();
         tmp.allActiveRentals();
         tmp.allToolsLeft();

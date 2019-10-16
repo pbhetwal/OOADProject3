@@ -28,6 +28,7 @@ class HardwareStore implements Observer, DisplayElement{
 	private int casCustToolTotal = 0;
 	private StoreRecord record;
 	private int custRentDays;
+	private int totalComplete = 0;
 
 	private HardwareStore() {
 		System.out.println("Our hardware rental store is now open!");
@@ -38,6 +39,13 @@ class HardwareStore implements Observer, DisplayElement{
 		return ins; 
 	}
 
+	public void incrementTotalComplete(){
+		totalComplete++;
+	}
+
+	public void completeRental(){
+		record.printRecord(totalComplete);
+	}
 
 	public void setCustRentDays(int days){
 		custRentDays = days;
@@ -272,7 +280,7 @@ class HardwareStore implements Observer, DisplayElement{
 	}
 
 	public void update(){
-		record.printRecord(getTotalSimRentals());
+		//record.printRecord(0);
 		//allActiveRentals();
 		//allToolsLeft();
 		setTotalPrice(0,"end");

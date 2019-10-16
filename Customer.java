@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
 import java.lang.StringBuilder;
+import java.util.List;
+import java.util.LinkedList;
 
 public class Customer implements Observer, DisplayElement{
 	private String name, className;
@@ -16,6 +18,7 @@ public class Customer implements Observer, DisplayElement{
 	private int numToolsRented = 0;
 	private int totalRental;
 	private HashMap<Tools, Integer> toolTimeMap = new HashMap<Tools, Integer>();
+	private List<StringBuilder> records = new LinkedList<StringBuilder>();
 	public Customer(){
 
 	}
@@ -33,8 +36,28 @@ public class Customer implements Observer, DisplayElement{
 		this.cb = cb;
 	}
 
-	public void returnTool(){
+	public void addCustRecord(StringBuilder rec){
+		records.add(rec);
+	}
 
+	public void checkReturns(String toolName, String custName, boolean done){
+		for(StringBuilder s: records){
+			String temp = s.toString();
+			if (temp.contains(toolName) && temp.contains(custName)) {
+				store.addRecord(s);
+				records.remove(s);
+				store.incrementTotalComplete();
+				//store.completeRental();
+				return;
+			}
+		}
+	}
+
+	public void finishReturns(){
+		store.completeRental();
+	}
+
+	public void returnTool(){
 		HashMap<Tools, Customer> temp = store.getMap();
 		Iterator it = toolTimeMap.entrySet().iterator();
 		while(it.hasNext()){
@@ -42,16 +65,15 @@ public class Customer implements Observer, DisplayElement{
 			if ((int)e.getValue() == 0){
 				Tools t = (Tools)e.getKey();
 				if(temp.get(t) == this){
-					System.out.println("Customer " + getName() + " is returning tool: " + t.getName());
+					//System.out.println("Customer " + getName() + " is returning tool: " + t.getName());
 					int i = (int)e.getValue();
 					toolTimeMap.put(t,i);
 					store.setHashMap(t,null);
 					setNumToolsRented(-1);
+					checkReturns(t.getName(), getName(), false);
 				}
 			}
 		}
-		
-		
 		
 	}
 
@@ -118,6 +140,7 @@ public class Customer implements Observer, DisplayElement{
 	}
 
 	public void announce(){
+		finishReturns();
 		return;
 	}
 
@@ -186,10 +209,11 @@ public class Customer implements Observer, DisplayElement{
 				//System.out.println((Tools)elem.getKey().getName());
 				//store.addRecord(totalRental);
 			}
+			//customer tried to get tool that has been rented
 			if(totalRental != 0){
 				rentalRecord.append(" Their total at checkout was: " + totalRental);
 			}
-			store.addRecord(rentalRecord);
+			addCustRecord(rentalRecord);
 			//System.out.println("Customer " + name + " is checking out with a total " + totalRental);
 		}
 	}

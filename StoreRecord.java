@@ -13,6 +13,12 @@ public class StoreRecord {
     }
 
     public void printRecord(int orderCount){
+        if(storeRecord.size() == 0){
+            System.out.println("The total number of completed orders is 0");
+            System.out.println("The list of completed orders is:");
+            System.out.println("None");
+            return;
+        }
         System.out.println("The total number of completed orders is " + orderCount);
         System.out.println("The list of completed orders is:");
         for(StringBuilder r: storeRecord){
