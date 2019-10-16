@@ -3,6 +3,10 @@ import java.util.LinkedList;
 import java.util.Random;
 
 public class Calendar<T extends Observer> implements Subject<T> {
+    /*
+    :Description:   Observer pattern used here - concrete 
+                    observable.  
+    */
     private static Calendar ins = new Calendar();
     private List<T> observers;
     private List<Customer> customers;
@@ -55,8 +59,7 @@ public class Calendar<T extends Observer> implements Subject<T> {
         }
 
         HardwareStore tmp = HardwareStore.getInstance();
-        //tmp.allActiveRentals();
-        //tmp.allToolsLeft();
+    
         tmp.printDayEarnings();
         day++;
 
@@ -70,8 +73,7 @@ public class Calendar<T extends Observer> implements Subject<T> {
                 Customer temp = (Customer)customers.get(r.nextInt(customers.size()));
                 temp.rent();
             }
-            //store.allActiveRentals();
-            //store.allToolsLeft();
+            
             endDay();
         }
     }
