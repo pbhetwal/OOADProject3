@@ -9,6 +9,32 @@ public class Main {
         int numDays = 35;
         HardwareStore store = HardwareStore.getInstance();
         List<Customer> customers = new LinkedList<Customer>();
+        ToolFactory toolCreator = new ToolFactory();
+        toolCreator.createTool("Painting", "Brush");
+        toolCreator.createTool("Painting", "Canvas");
+        toolCreator.createTool("Painting", "PaintPan");
+        toolCreator.createTool("Painting", "Tape");
+        toolCreator.createTool("Painting", "Tarp");
+        toolCreator.createTool("Plumbing", "Pipe");
+        toolCreator.createTool("Plumbing", "Hose");
+        toolCreator.createTool("Plumbing", "Faucet");
+        toolCreator.createTool("Plumbing", "Joint");
+        toolCreator.createTool("Plumbing", "Sealant");
+        toolCreator.createTool("Yardwork", "Pitchfork");
+        toolCreator.createTool("Yardwork", "Gloves");
+        toolCreator.createTool("Yardwork", "Wheelbarrow");
+        toolCreator.createTool("Yardwork", "Pruners");
+        toolCreator.createTool("Yardwork", "Mowers");
+        toolCreator.createTool("Yardwork", "Weedeater");
+        toolCreator.createTool("Concrete", "Shovel");
+        toolCreator.createTool("Concrete", "Mixer");
+        toolCreator.createTool("Concrete", "BagOfMix");
+        toolCreator.createTool("Woodwork", "Axe");
+        toolCreator.createTool("Woodwork", "Saw");
+        toolCreator.createTool("Woodwork", "Woodfile");
+        toolCreator.createTool("Woodwork", "Sawhorse");
+
+    /*
         Tools Brush = new PaintingTool("Brush");
         Tools Canvas = new PaintingTool("Canvas");
         Tools PaintPan = new PaintingTool("PaintPan");
@@ -54,6 +80,7 @@ public class Main {
         store.addToolToHashMap(Axe);
         store.addToolToHashMap(Woodfile);
         store.addToolToHashMap(Sawhorse);
+     */
         Customer Carl = new CasualCustomer("Carl", store);
         Customer Conner = new CasualCustomer("Conner", store);
         Customer Carrie = new CasualCustomer("Carrie", store);
