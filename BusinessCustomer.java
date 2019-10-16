@@ -14,16 +14,6 @@ public class BusinessCustomer extends Customer{
 		setCustomerBehavior(new BusinessCustomerBehavior());
 	}
 
-
-
-	public int rentTools() {
-		return 0;
-	}
-
-	public int calcDays(){
-		return 0;
-	}
-
 	@Override
 	public String getCustClass(){
 		return "BusinessCustomer";

@@ -14,14 +14,6 @@ public class RegularCustomer extends Customer{
 		setCustomerBehavior(new RegularCustomerBehavior());
 	}
 
-	public int rentTools() {
-		return 0;
-	}
-
-	public int calcDays(){
-		return 0;
-	}
-
 	@Override
 	public String getCustClass(){
 		return "RegularCustomer";

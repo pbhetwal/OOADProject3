@@ -1,10 +1,5 @@
 public abstract class Tools {
-    public boolean isAvailable(){
-        if(rented_ == true){
-            return false;
-        }
-        return true;
-    }
+
     public String getName() {
         return name_;
     }
@@ -25,14 +20,9 @@ public abstract class Tools {
     public void setCategory(String category){
         category_ = category;
     }
-    public boolean getRented(){
-        return rented_;
-    }
-    public void setRented(boolean rented){
-        rented_ = rented;
-    }
+
     private int price_;
     private String name_;
     private String category_;
-    private boolean rented_;
+
 }
