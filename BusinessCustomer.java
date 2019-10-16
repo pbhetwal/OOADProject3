@@ -25,6 +25,11 @@ public class BusinessCustomer extends Customer{
 	}
 
 	@Override
+	public String getCustClass(){
+		return "BusinessCustomer";
+	}
+
+	@Override
 	public void changeAmount(){
 		int num = store.getBusinessRentAmt();
 		cb.setMaxAmt(num);

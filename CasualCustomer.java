@@ -24,6 +24,11 @@ public class CasualCustomer extends Customer{
 	}
 
 	@Override
+	public String getCustClass(){
+		return "CasualCustomer";
+	}
+
+	@Override
 	public void changeAmount(){
 		int num = store.getCasualRentAmt();
 		cb.setMaxAmt(num);

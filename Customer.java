@@ -80,6 +80,9 @@ public class Customer implements Observer, DisplayElement{
 		
 	}
 
+	public String getCustClass(){
+		return "";
+	}
 	//to be overridden
 	public int rentTools() {
 		return 0;
