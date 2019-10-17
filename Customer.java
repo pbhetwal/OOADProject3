@@ -214,9 +214,9 @@ public abstract class Customer implements Observer{
 			//customer tried to get tool that has been rented
 			if(totalRental != 0){
 				rentalRecord.append(" Their total at checkout was: " + totalRental);
+				System.out.println("Customer " + name + " is checking out with a total " + totalRental);
 			}
 			addCustRecord(rentalRecord);
-			System.out.println("Customer " + name + " is checking out with a total " + totalRental);
 		}
 	}
 
