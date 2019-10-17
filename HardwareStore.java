@@ -234,17 +234,17 @@ class HardwareStore implements Observer{
 				op = chooseOption();
 				if(op == "cord"){
 					additions.append(" They added option extension cord\n");
-					//System.out.println(" Adding option extension cord to their shopping cart before check out");
+					System.out.println(" Adding option extension cord to their shopping cart before check out");
 					price += extensionCord;
 				}
 				else if(op == "kit"){
 					additions.append(" They added option accessory kit\n");
-					//System.out.println(" Adding option accessory kit to their shopping cart before check out");
+					System.out.println(" Adding option accessory kit to their shopping cart before check out");
 					price += accessoryKit;
 				}
 				else{
 					additions.append(" They added option protective gear\n");
-					//System.out.println(" Adding option protective gear to their shopping cart before check out");
+					System.out.println(" Adding option protective gear to their shopping cart before check out");
 					price += protectiveGear;
 				}
 
