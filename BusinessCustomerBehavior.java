@@ -14,6 +14,7 @@ public class BusinessCustomerBehavior implements CustomerBehavior{
 
 	}
 
+	//setter for max amount to rent
 	public void setMaxAmt(int num){
 		maxAmt = num;
 	}
@@ -22,16 +23,19 @@ public class BusinessCustomerBehavior implements CustomerBehavior{
 		return maxAmt;
 	}
 
+	//gets random number
 	public int getRand(int min, int max){
 		int num = (int)((Math.random()*((max - min) + 1)) + min);
 		return num;
 	}
 
+	//business customer will rent 3 or 0 tools
 	public int rentTools() {
 		randToolNum = maxAmt;
 		return randToolNum;
 	}
 
+	//business customer will rent for 3 days
 	public int calcDays(){
 		randNumDays = 7;
 		return randNumDays;

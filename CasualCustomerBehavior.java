@@ -13,6 +13,7 @@ public class CasualCustomerBehavior implements CustomerBehavior{
 	public CasualCustomerBehavior(){
 
 	}
+	//setter for max amount to rent
 	public void setMaxAmt(int num){
 		maxAmt = num;
 	}
@@ -21,16 +22,19 @@ public class CasualCustomerBehavior implements CustomerBehavior{
 		return maxAmt;
 	}
 
+	//gets random number
 	public int getRand(int min, int max){
 		int num = (int)((Math.random()*((max - min) + 1)) + min);
 		return num;
 	}
 
+	//casual customer will rent 2, 1 or 0 tools
 	public int rentTools() {
 		randToolNum = (int)getRand(1,maxAmt);
 		return randToolNum;
 	}
 
+	//casual customer can rent for 1 or 2 days
 	public int calcDays(){
 		randNumDays = getRand(1,2);
 		return randNumDays;

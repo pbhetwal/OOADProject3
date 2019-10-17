@@ -15,6 +15,7 @@ public class StoreRecord {
         storeRecord.add(dayRecord);
     }
 
+    //print the completed orders from the store
     public void printRecord(int orderCount){
         if(storeRecord.size() == 0){
             System.out.println("The total number of completed rentals is 0");

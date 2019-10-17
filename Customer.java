@@ -10,7 +10,11 @@ import java.lang.StringBuilder;
 import java.util.List;
 import java.util.LinkedList;
 
-public class Customer implements Observer, DisplayElement{
+public abstract class Customer implements Observer{
+	/*
+	:Description:	Abstract class for customer with methods for renting
+					implemented
+	*/
 	private String name, className;
 	private int daysLeft;
 	protected CustomerBehavior cb;
@@ -31,31 +35,34 @@ public class Customer implements Observer, DisplayElement{
 		store = s;
     }
 
-
+	//sets customer behaviore
 	public void setCustomerBehavior(CustomerBehavior cb){
 		this.cb = cb;
 	}
 
+	//adds a record to customers own rental record
 	public void addCustRecord(StringBuilder rec){
 		records.add(rec);
 	}
 
+	//check if a customer returned a tool and adds record to StoreRecord
 	public void checkReturns(String toolName, String custName, boolean done){
 		for(StringBuilder s: records){
 			String temp = s.toString();
 			if (temp.contains(toolName) && temp.contains(custName)) {
 				store.addRecord(s);
 				records.remove(s);
-				//store.completeRental();
 				return;
 			}
 		}
 	}
 
+	//tells store to print the completed rentals
 	public void finishReturns(){
 		store.completeRental();
 	}
 
+	//customer returns tools rented if days are up
 	public void returnTool(){
 		HashMap<Tools, Customer> temp = store.getMap();
 		Iterator it = toolTimeMap.entrySet().iterator();
@@ -64,7 +71,6 @@ public class Customer implements Observer, DisplayElement{
 			if ((int)e.getValue() == 0){
 				Tools t = (Tools)e.getKey();
 				if(temp.get(t) == this){
-					//System.out.println("Customer " + getName() + " is returning tool: " + t.getName());
 					int i = (int)e.getValue();
 					toolTimeMap.put(t,i);
 					store.setHashMap(t,null);
@@ -116,7 +122,6 @@ public class Customer implements Observer, DisplayElement{
 		return this.daysLeft;
 	}
 
-
 	public int getRand(int min, int max){
 		int num = (int)((Math.random()*((max - min) + 1)) + min);
 		return num;
@@ -130,6 +135,7 @@ public class Customer implements Observer, DisplayElement{
 		return this.numToolsRented;
 	}
 
+	//decrements the days the customer has the tool for
 	public void update(){
 		totalRental = 0;
 		Iterator it = toolTimeMap.entrySet().iterator();
@@ -145,6 +151,7 @@ public class Customer implements Observer, DisplayElement{
 		
 	}
 
+	//last customer to return will have store print the record
 	public void announce(){
 		finishReturns();
 		return;
@@ -154,6 +161,7 @@ public class Customer implements Observer, DisplayElement{
 
 	}
 
+	//customer will add options and pay for their tool
 	public StringBuilder checkOut(){
 		StringBuilder additions = new StringBuilder();
 		int custPrice = store.additonalOptions(additions);
@@ -170,6 +178,7 @@ public class Customer implements Observer, DisplayElement{
 		return additions;
 	}
 
+	//customer will rent a tool
 	public void rent(){
 		if(cb.getMaxAmt() > store.getToolsRented()){
 			return;

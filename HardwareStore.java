@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Iterator;
 import java.lang.StringBuilder;
 
-class HardwareStore implements Observer, DisplayElement{
+class HardwareStore implements Observer{
 	private static HardwareStore ins = new HardwareStore();
 	private int TotalPrice = 0;
 	private HashMap<Tools, Customer> hmap = new HashMap<Tools, Customer>();
@@ -120,6 +120,7 @@ class HardwareStore implements Observer, DisplayElement{
 		}
 	}
 
+	//print the tools left in the store
 	public void allToolsLeft(){
 
 		Iterator it = hmap.entrySet().iterator();
@@ -141,6 +142,7 @@ class HardwareStore implements Observer, DisplayElement{
 		return this.TotalPrice;
 	}
 
+	//sets total price to 0 if day ends, otherwise increment by amount
 	public void setTotalPrice(int tp, String s){
 		if(s == "end"){
 			TotalPrice = 0;
@@ -150,6 +152,7 @@ class HardwareStore implements Observer, DisplayElement{
 		}
 	}
 
+	//print sthe totals at the end of the simulation
 	public void printDayEarnings(){
 		int p = getTotalPrice();
 		System.out.println("The Store made "+ p +" dollars today");
@@ -251,6 +254,7 @@ class HardwareStore implements Observer, DisplayElement{
 		return price;
 	}
 
+	//updates amounts each customer type can rent depending on how many tools are left
 	public void checkAvailable(){
 		if(24 - toolsRented < 3){
 			businessRentAmt = 0;
