@@ -1,11 +1,13 @@
-// Singleton pattern used here 
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
 import java.lang.StringBuilder;
 
 class HardwareStore implements Observer{
+	/*
+    :Description:   Class for the Hardware store - singleton pattern 
+    				used here. 
+    */
 	private static HardwareStore ins = new HardwareStore();
 	private int TotalPrice = 0;
 	private HashMap<Tools, Customer> hmap = new HashMap<Tools, Customer>();
@@ -102,6 +104,7 @@ class HardwareStore implements Observer{
 		priceMap.put(c.getName(), 0);
 	}
 
+	// Prints the number of active rentals and the actual rentals 
 	public void allActiveRentals(){
 
 		Iterator it = hmap.entrySet().iterator();
@@ -254,7 +257,7 @@ class HardwareStore implements Observer{
 		return price;
 	}
 
-	//updates amounts each customer type can rent depending on how many tools are left
+	// Updates amounts each customer type can rent depending on how many tools are left
 	public void checkAvailable(){
 		if(24 - toolsRented < 3){
 			businessRentAmt = 0;
