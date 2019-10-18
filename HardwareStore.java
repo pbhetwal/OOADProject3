@@ -14,9 +14,9 @@ class HardwareStore implements Observer{
 	private int accessoryKit = 25;
 	private int protectiveGear = 30;
 	private int toolsRented = 0;
-	private int businessRentAmt;
-	private int casualRentAmt;
-	private int regularRentAmt;
+	private int businessRentAmt = 3;
+	private int casualRentAmt = 2;
+	private int regularRentAmt = 3;
 	private int totalSimulationMoney = 0;
 	private int updateDayCount = 1;
 	private int totalSimRentals = 0;
@@ -155,7 +155,7 @@ class HardwareStore implements Observer{
 	//print sthe totals at the end of the simulation
 	public void printDayEarnings(){
 		int p = getTotalPrice();
-		System.out.println("The Store made "+ p +" dollars today");
+		System.out.println("\nThe Store made "+ p +" dollars today");
 		int count = getUpdateDayCount();
 		if(count == 36){
 			int total = getTotalSimMoney();
@@ -163,7 +163,7 @@ class HardwareStore implements Observer{
 			int bus = getBusCustToolTotal();
 			int cas = getCasCustToolTotal();
 			int reg = getRegCustToolTotal();
-			System.out.println("The Store made "+ total +" dollars over the course of 35 days");
+			System.out.println("\nThe Store made "+ total +" dollars over the course of 35 days");
 			System.out.println("The Store issued "+ transaction +" total rentals over the course of 35 days");
 			System.out.println("The Store rented "+ bus +" tools  total to business customers over the course of 35 days");
 			System.out.println("The Store rented "+ cas +" tools total to casual customers over the course of 35 days");
@@ -192,7 +192,7 @@ class HardwareStore implements Observer{
 			String custName = customer.getName();
 			String toolName = tool.getName();
 			s.append("Customer "+ custName + " rented the tool "+ toolName);
-			System.out.println("Customer "+ custName + " is adding tool "+ toolName +" to their shopping cart");
+			System.out.println("\nCustomer "+ custName + " is adding tool "+ toolName +" to their shopping cart");
 			String custClassName = customer.getCustClass();
 			
 			if(custClassName == "BusinessCustomer"){

@@ -9,9 +9,14 @@ public class RegularCustomerBehavior implements CustomerBehavior{
 	*/
 	private int randToolNum, randNumDays;
 	private int maxAmt;
+	private int maxToolAmount = 3;
 
 	public RegularCustomerBehavior(){
 
+	}
+
+	public int getMaxToolAmount(){
+		return maxToolAmount;
 	}
 	//setter for max amount to rent
 	public void setMaxAmt(int num){

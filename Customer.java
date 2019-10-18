@@ -180,13 +180,16 @@ public abstract class Customer implements Observer{
 
 	//customer will rent a tool
 	public void rent(){
-		if(cb.getMaxAmt() > store.getToolsRented()){
+		if((cb.getMaxAmt() > store.getToolsRented()) || (store.getToolsRented() == 24)){
 			return;
 		}
 		StringBuilder rentalRecord = new StringBuilder();
 		store.checkAvailable();
 		changeAmount();
 		int numTools = cb.rentTools();
+		if(cb.getMaxToolAmount() < (getNumToolsRented() + numTools)){
+			return;
+		}
 		setDaysLeft(cb.calcDays());
 		store.setCustRentDays(daysLeft);
 		HashMap<Tools, Customer> temp = store.getMap();
@@ -197,7 +200,7 @@ public abstract class Customer implements Observer{
 				Map.Entry elem = (Map.Entry)it.next();
 				if(elem.getValue() == null){
 					store.addCustomerToHashMap(this, (Tools)elem.getKey(), rentalRecord);
-					toolTimeMap.put((Tools)elem.getKey(), daysLeft);
+					toolTimeMap.put((Tools)elem.getKey(), daysLeft-1);
 					int z = store.getToolsRented();
 					z++;
 					store.setToolsRented(z);

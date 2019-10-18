@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Random;
+import java.util.ArrayList;
 
 public class Calendar<T extends Observer> implements Subject<T> {
     /*
@@ -77,9 +78,13 @@ public class Calendar<T extends Observer> implements Subject<T> {
         for(int i = 0; i < numDays; i++){
             int numCust = r.nextInt(customers.size() + 1);
             startDay();
+            List<Customer> visitedToday = new ArrayList<Customer>();
             for(int j = 0; j < numCust; j++){
                 Customer temp = (Customer)customers.get(r.nextInt(customers.size()));
-                temp.rent();
+                if(!visitedToday.contains(temp)){
+                    temp.rent();
+                }
+                visitedToday.add(temp);
             }
             
             endDay();
